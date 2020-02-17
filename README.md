@@ -1,11 +1,22 @@
 # BloodDonation
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d312abf9518f3ce96d0cdce1bc153e6ce2256b7f
 ----------
 
 # Getting started
 
 ## Installation
 
+<<<<<<< HEAD
+=======
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+
+
+>>>>>>> d312abf9518f3ce96d0cdce1bc153e6ce2256b7f
 Clone the repository
 
     
