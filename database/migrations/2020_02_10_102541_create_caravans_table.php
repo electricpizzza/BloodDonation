@@ -15,7 +15,7 @@ class CreateCaravansTable extends Migration
     {
         Schema::create('caravans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('currentPosition')->nullable();
             $table->string('latestPosition');
             $table->string('city');

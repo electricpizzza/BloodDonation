@@ -16,6 +16,11 @@ class CreateBloodRequestsTable extends Migration
         Schema::create('blood_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('caravan_id')->nullable();
+            $table->unsignedBigInteger('association_id')->nullable();
+            $table->index('caravan_id');
+            $table->index('association_id');
+            $table->index('user_id');
             $table->string('bloodType');
             $table->string('city');
             $table->string('hospital');

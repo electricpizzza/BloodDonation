@@ -20,7 +20,7 @@ class CreateAssociationsTable extends Migration
             $table->string('website')->nullable();
             $table->string('description')->nullable();
             $table->string('adress');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->index('user_id');
             $table->timestamps();
         });

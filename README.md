@@ -66,3 +66,4 @@ Run the database seeder and you're done
 ## Environment variables
 
 - `.env` - Environment variables can be set in this file
+

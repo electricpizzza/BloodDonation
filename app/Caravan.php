@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Caravan extends Model
 {
 
@@ -24,6 +25,11 @@ class Caravan extends Model
     public function events()
     {
         return $this->hasMany(Event::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
     
 }

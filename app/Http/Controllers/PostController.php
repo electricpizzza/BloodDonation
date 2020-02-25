@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request,User $user)
     {
-
-        $request->validate([
+        
+       $post = $request->validate([
             'title'=>'required',
             'description'=>'required',
-            'type'=>'required',
-            'address'=>'required',
-            'city'=>'required',
+            'image'=>'image',
         ]);
-        auth()->user()->potes()->create($request->all());
+
+        $user = \App\User::find(1);
+
+        $user->caravan->posts()->create($post);
+
+        return $post;
     }
 }
