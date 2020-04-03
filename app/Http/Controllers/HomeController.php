@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $requests = \App\BloodRequest::all();
+        return view('home',compact('requests'));
+    }
+
+    public function setting(User $user)
+    {
+        if ($user!=auth()->user()) {
+            return redirect('home');
+            }
+        return view('settings',compact('user'));
+    }
+
+    public function planning(User $user)
+    {
+        if ($user!=auth()->user()) {
+        return redirect('home');
+        }
+        return view('planning.planning',compact('user'));
     }
 }

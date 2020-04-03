@@ -49516,6 +49516,7 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/myApp/resourc
 
 let city;
 $(this).ready(function () {
+  $("input[type='number']").inputSpinner();
   navigator.geolocation;
   navigator.geolocation.getCurrentPosition(loc=>{
     const long=loc.coords.longitude;

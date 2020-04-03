@@ -7,11 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ 'Drop of Life' }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,13 +20,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ 'Drop of Life' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,24 +44,50 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Conexion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="{{ route('home') }}" class="nav-link d-flex justify-content-end">
+                                    <img src="https://img.icons8.com/ios-filled/24/636363/home.png"/>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" id="notificationDropdown" class="nav-link d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
+                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
+                                    </a>
+                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
+                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
+                                    </a>
+                                </div>
+                                
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
+                                        {{ __('Planning') }}<img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>
+                                    </a>
+                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/setting">
+                                        {{ __('Paramètre') }}<img src="https://img.icons8.com/material-sharp/24/636363/settings.png"/>
+                                    </a>
+                                    <a class="dropdown-item d-flex justify-content-between" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}<img src="https://img.icons8.com/metro/24/636363/logout-rounded.png"/>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -76,6 +104,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <a class="addreq rounded-circle p-0" href="{{route('request.create') }}">
+            <img src="https://img.icons8.com/material-rounded/80/ff6b95/add.png"/>
+        </a>
     </div>
 </body>
 </html>

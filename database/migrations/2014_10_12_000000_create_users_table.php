@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('curentCity')->nullable();
+            $table->string('bloodType')->nullable();
             $table->string('city');
             $table->string('roll')->default('user');
             $table->timestamp('email_verified_at')->nullable();

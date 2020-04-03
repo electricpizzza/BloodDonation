@@ -13,6 +13,8 @@ class CaravanController extends Controller
         dd($caravan->id);
         return view('caravan.caravan',compact('caravan'));
     }
+
+
     public function store(Request $request)
     {
         
@@ -24,7 +26,7 @@ class CaravanController extends Controller
         ]);
 
         $user = \App\User::find(1);
-        //dd($user,$caravan);
+        
         $user->caravan()->create(array_merge($caravan,[
             "latestPosition"=>$caravan["currentPosition"]
         ]));

@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{user}/setting', 'HomeController@setting')->name('setting');
+Route::get('/{user}/planning', 'HomeController@planning')->name('planning');
+
+Route::get('/request/create', 'BloodRequestController@create')->name('request.create');
+Route::post('/request', 'BloodRequestController@store')->name('request.store');

@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class BloodRequest extends Model
 {
+    protected $garded =[];
     protected $fillable = [
-        'bloodType','city','hospital','address','nbMax',
+        'bloodType','city','description','address','nbMax',
     ];
 
     public function user()
