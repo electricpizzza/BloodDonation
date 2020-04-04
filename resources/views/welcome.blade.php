@@ -84,7 +84,6 @@
                 <div class="title m-b-md">
                     Drop of Life <img src="https://img.icons8.com/ios-filled/90/ff6b95/drop-of-blood.png"/>
                 </div>
-
             </div>
         </div>
     </body>

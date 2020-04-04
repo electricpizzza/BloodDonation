@@ -4,24 +4,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @foreach ($requests as $item)
-            <div class="card m-2 card-bd-post card-bd">
+            @foreach ($requests as $request)
+            <div class="card m-2 card-bd-req card-bd">
                 <div class="card-head card-bd-head">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
-                    <h1 class="d-inline m-3 float-right blood-type">A+</h1>
+                    <h1 class="d-inline m-3 float-right blood-type">{{$request->bloodType}}</h1>
                     <div class="mt-4 card-bd-info d-inline float-left">
-                        <h3 class="m-0 card-username">ZAKARAIE SEGHIR</h3>
-                        <h6 class="card-ville">Fès-Boulemane</h6>
+                        <h3 class="m-0 card-username">{{$request->user->name}}</h3>
+                        <h6 class="card-ville">{{$request->city}}</h6>
                     </div>
                 </div>
                 <div class="card-body card-bd-body float-left d-inline">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
-                    dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
-                    modi minus.
+                    <p class="card-address"><b>Address : </b>{{$request->address}}</p>
+                    <p>{{$request->description}}</p>
+                    <div class="d-flex justify-content-between">
+                        <div class="text-primary">{{$request->created_at}}</div>
+                        <div class="card-link">
+                            <a href=""><i class="fas fa-paper-plane p-1"></i></a>
+                            <a href=""><i class="fas fa-share p-1"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        
-            <div class="card m-2 card-bd-req card-bd">
+            @endforeach
+            <div class="card m-2 card-bd-post card-bd">
                 <div class="card-head card-bd-head">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
                     <h1 class="d-inline m-3 float-right blood-type">O-</h1>
@@ -34,9 +40,15 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
                     dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
                     modi minus.
+                    <div class="d-flex justify-content-between">
+                        <div class="text-primary">{{$request->created_at}}</div>
+                        <div style="font-size:20px">
+                            <a href=""><i class="fas fa-paper-plane p-1"></i></a>
+                            <a href=""><i class="fas fa-share p-1"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        
             <div class="card m-2 card-bd-event card-bd">
                 <div class="card-head card-bd-head">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
@@ -50,9 +62,15 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
                     dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
                     modi minus.
+                    <div class="d-flex justify-content-between">
+                        <div class="text-primary">{{$request->created_at}}</div>
+                        <div style="font-size:20px">
+                            <a href=""><i class="fas fa-paper-plane p-1"></i></a>
+                            <a href=""><i class="fas fa-share p-1"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            @endforeach
         </div>
         <div class="col-md-4 col-0 mt-md-0 mt-5">
             <h5 class="title p-2">À Votre Proximité</h5>

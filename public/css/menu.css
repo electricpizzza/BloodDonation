@@ -1,0 +1,96 @@
+        #menu-bd {
+            background: rgb(250, 207, 211);
+            transition-duration: 0.5s;
+        }
+
+        .icons-bd {
+            color: rgb(255, 234, 236);
+            font-size: 50px;
+            position: relative;
+            top: 25px;
+            transition-duration: 0.1s;
+            transition-property: color;
+        }
+
+        .icons-bd-main {
+            color: rgb(248, 68, 98);
+            transition-duration: 0.5s;
+        }
+
+        .icons-bd-main-x {
+            color: rgb(255, 234, 236);
+            transition-duration: 0.5s;
+        }
+
+        .menu-layout {
+            position: fixed;
+            top: 70vh;
+            right: -350px;
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .menu-button {
+            width: 100px;
+            height: 100px;
+            top: 100px;
+            background-color: red;
+            border-radius: 50px;
+            position: relative;
+            z-index: 10 !important;
+            box-shadow:10px 10px 15px darkgray;
+        }
+
+        .menu-button:hover {
+            cursor: pointer;
+        }
+
+        .bd-prop {
+            cursor: pointer;
+            background: #ff596d;
+            transition-duration: 0.1s;
+            transition-property: background;
+        }
+
+        .bd-prop:hover {
+            background: rgb(255, 234, 236);
+            transition-duration: 0.1s;
+            transition-property: background;
+        }
+
+        .bd-prop:hover .icons-bd {
+            color: #ff596d;
+            transition-duration: 0.1s;
+            transition-property: color;
+        }
+
+        .home-bd {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            position: relative;
+            opacity: 0;
+            box-shadow:10px 10px 15px darkgray;
+        }
+
+        .about-bd {
+            width: 100px;
+            height: 100px;
+            top: -100px;
+            border-radius: 50px;
+            position: relative;
+            opacity: 0;
+            box-shadow:10px 10px 15px darkgray;
+        }
+
+        .contact-bd {
+            width: 100px;
+            height: 100px;
+            top: -200px;
+            border-radius: 50px;
+            position: relative;
+            opacity: 0;
+            box-shadow:10px 10px 15px darkgray;
+        }

@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $requests = \App\BloodRequest::all();
+        $requests = \App\BloodRequest::latest()->paginate(10);
         return view('home',compact('requests'));
     }
 

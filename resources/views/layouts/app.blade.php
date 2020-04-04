@@ -13,22 +13,26 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
-    <link rel="stylesheet" href="css/card.css">
+    <script src="{{ asset('js/menu-script.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ 'Drop of Life' }}
+                    <i class="fas fa-tint"> D</i>{{ 'rop of Life' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -63,13 +67,17 @@
                                     <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+                                <div class="dropdown-menu dropdown-menu-right notification-bar" aria-labelledby="notificationDropdown">
                                     <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
                                         <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
                                     </a>
                                     <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
                                         <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
                                     </a>
+                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
+                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
+                                    </a>
+                                    
                                 </div>
                                 
                             </li>
@@ -105,9 +113,28 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <a class="addreq rounded-circle p-0" href="{{route('request.create') }}">
-            <img src="https://img.icons8.com/material-rounded/80/ff6b95/add.png"/>
-        </a>
+           @auth
+        <div class="menu-layout" id="menu-layout">
+            <div class="menu-button" id="menu-bd">
+                <i class="fas fa-bars icons-bd icons-bd-main"></i>
+            </div>
+            <a href="{{route('home') }}">
+                <div class="home-bd bd-prop">
+                    <i class="fas fa-home icons-bd"></i>
+                </div>
+            </a>
+            <a href="{{route('request.create') }}">
+                <div class="about-bd bd-prop">
+                    <i class="fas fa-paper-plane icons-bd"></i>
+                </div>
+            </a>
+            <a href="{{route('request.create') }}">
+                <div class="contact-bd bd-prop">
+                    <i class="fas fa-tint icons-bd"></i>
+                </div>
+            </a>
+        </div>
+        @endauth
     </div>
 </body>
 </html>
