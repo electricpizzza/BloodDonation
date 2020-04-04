@@ -5,19 +5,51 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             @foreach ($requests as $item)
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are in : {{auth()->user()->city}}!<br>
-                    Your role : {{auth()->user()->roll}}!<br>
-                    Your email : {{auth()->user()->email}}!<br>
+            <div class="card m-2 card-bd-post card-bd">
+                <div class="card-head card-bd-head">
+                    <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
+                    <h1 class="d-inline m-3 float-right blood-type">A+</h1>
+                    <div class="mt-4 card-bd-info d-inline float-left">
+                        <h3 class="m-0 card-username">ZAKARAIE SEGHIR</h3>
+                        <h6 class="card-ville">Fès-Boulemane</h6>
+                    </div>
+                </div>
+                <div class="card-body card-bd-body float-left d-inline">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
+                    dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
+                    modi minus.
+                </div>
+            </div>
+        
+            <div class="card m-2 card-bd-req card-bd">
+                <div class="card-head card-bd-head">
+                    <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
+                    <h1 class="d-inline m-3 float-right blood-type">O-</h1>
+                    <div class="mt-4 card-bd-info d-inline float-left">
+                        <h3 class="m-0 card-username">ZAKARAIE DINAR</h3>
+                        <h6 class="card-ville">Fès-Boulemane</h6>
+                    </div>
+                </div>
+                <div class="card-body card-bd-body float-left d-inline">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
+                    dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
+                    modi minus.
+                </div>
+            </div>
+        
+            <div class="card m-2 card-bd-event card-bd">
+                <div class="card-head card-bd-head">
+                    <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
+                    <h1 class="d-inline m-3 float-right blood-type">O-</h1>
+                    <div class="mt-4 card-bd-info d-inline float-left">
+                        <h3 class="m-0 card-username">ZAKARAIE DINAR</h3>
+                        <h6 class="card-ville">Fès-Boulemane</h6>
+                    </div>
+                </div>
+                <div class="card-body card-bd-body float-left d-inline">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
+                    dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
+                    modi minus.
                 </div>
             </div>
             @endforeach

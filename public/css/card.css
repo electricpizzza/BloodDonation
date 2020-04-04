@@ -1,0 +1,94 @@
+
+
+
+body{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/*post colors*/
+.card-bd-post{
+    border-left: 4px solid rgb(47, 50, 253) !important;
+    background-color: rgba(185, 192, 255, 0.1);
+}
+.card-bd-post .card-username{
+    color: rgb(18, 0, 122);
+}
+.card-bd-post .card-ville{
+    color: rgba(18, 0, 122,0.7);
+}
+.card-bd-post .card-bd-body{
+    color: rgba(0, 10, 102, 0.8);
+}
+.card-bd-post .card-bd-body{
+    background-color: rgb(238, 241, 255);
+}
+/*request colors*/
+.card-bd-req{
+    border-left: 4px solid rgb(253, 47, 75) !important;
+    background-color: rgba(255, 220, 227, 0.1);
+}
+.card-bd-req .card-username{
+    color: rgb(206, 0, 45);
+}
+.card-bd-req .card-ville{
+    color: rgba(122, 0, 37, 0.7);
+}
+.card-bd-req .card-bd-body{
+    color: rgba(255, 0, 21, 0.8);
+}
+.card-bd-req .card-bd-body{
+    background-color: rgb(255, 241, 245);
+}
+.card-bd-req{
+    box-shadow: 0px 0px 10px rgba(255, 0, 21, 0.1);
+}
+/*event colors*/
+.card-bd-event{
+    border-left: 4px solid rgb(153, 47, 253) !important;
+    background-color: rgba(255, 220, 227, 0.1);
+}
+.card-bd-event .card-username{
+    color: rgb(130, 0, 206);
+}
+.card-bd-event .card-ville{
+    color: rgba(122, 0, 116, 0.7);
+}
+.card-bd-event .card-bd-body{
+    color: rgba(162, 0, 255, 0.8);
+}
+.card-bd-event .card-bd-body{
+    background-color: rgb(251, 241, 255);
+}
+.card-bd-event{
+    box-shadow: 0px 0px 10px rgba(195, 0, 255, 0.1);
+}
+
+/*-----------------------------*/
+
+.card-img-top{
+    width: 70px !important;
+}
+.card-username{
+    font-weight: bold;
+}
+
+
+
+
+.blood-type{
+    color: rgb(240, 240, 240);
+    font-weight: bold;
+    background-color: rgb(255, 0, 64);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.card-ville{
+    font-weight: lighter;
+    
+}
+
+.card-bd-head{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}

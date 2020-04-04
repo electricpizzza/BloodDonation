@@ -13,6 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
+    <link rel="stylesheet" href="css/card.css">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
