@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\InNotif;
 use App\User;
 use Illuminate\Http\Request;
 
-
+use DateTime;
 
 class BloodRequestController extends Controller
 {
@@ -18,11 +19,22 @@ class BloodRequestController extends Controller
             "bloodType" => "required",
             "city" => "required",
             "address" => "required",
-            "nbMax" => "required|int",
+            "deadline" => "required",
             "description" => "required"
         ]);
+        $deadline = new DateTime($request['deadline']);
+         auth()->user()->bloodRequests()->create(array_merge($request,[
+            $request["deadline"] => $deadline,
+         ]));
+         $users = \DB::table('users')->where('city',$request['city'])->where('id','!=',auth()->user()->id)->get();
+         if($users->count()!=0)
+          foreach ($users as $user) {
+             $usr = User::find($user->id);
+             $usr->notify(new InNotif(auth()->user()->bloodRequests()->latest()->first(),auth()->user()));
+          }
+         
 
-        auth()->user()->bloodRequests()->create($request);
+
        return redirect('home');
     }
 

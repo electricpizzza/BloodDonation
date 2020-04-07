@@ -10,11 +10,17 @@
     <title>{{ 'Drop of Life' }}</title>
 
     <!-- Scripts -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/menu-script.js') }}"></script>
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -32,7 +38,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="fas fa-tint"> D</i>{{ 'rop of Life' }}
+                    <i class="fas fa-tint text-danger"> D</i>{{ 'rop of Life' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -65,19 +71,47 @@
                             <li class="nav-item dropdown">
                                 <a href="#" id="notificationDropdown" class="nav-link d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
+                                    @if (auth()->user()->unreadNotifications->count()!=0)
+                                    <span class="badge badge-danger badge-pill m-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->count()}}</span>
+                                    @endif
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right notification-bar" aria-labelledby="notificationDropdown">
-                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
-                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
-                                    </a>
-                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
-                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
-                                    </a>
-                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
-                                        <img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>{{ __('Blood request') }}
-                                    </a>
-                                    
+                                <!------Notifications------>
+                                <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> 
+                                <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
+                                
+                                <div class="dropdown-menu dropdown-menu-right notif-bd" aria-labelledby="notificationDropdown" id="notifications">
+                                   
+                                    @foreach (auth()->user()->notifications as $notification)
+                                        @if ($notification->read_at!=null)
+                                        <a class="notif-bd-bloodr w-100 btn bg-light" id="{{$notification->id}}" href="/bloodrequest/{{$notification['data']['id']}}">
+                                            <div class="d-inline float-left notif-icon w-25">
+                                                <i class="fas fa-tint"></i>
+                                                <span class="notif-date d-block">{{$notification->created_at}}</span>
+                                            </div>
+                                            <div class="d-inline float-right notif-info w-75 pr-1 pt-1">
+                                                <strong class="notif-username">{{$notification['data']['sender_name']}}</strong>
+                                                <span class="notif-info text-dark"> a publier un demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
+                                                </span>
+                                            </div>
+                                        </a> 
+                                        @else    
+                                    <form id="logout-form" action="/notifications/{{$notification->id}}/{{$notification['data']['id']}}" method="POST"  >
+                                    <button type="submit" class="notif-bd-bloodr w-100 btn bg-info" id="{{$notification->id}}" href="/bloodrequest/{{$notification['data']['id']}}">
+                                        @csrf                                        
+                                        <div class="d-inline float-left notif-icon w-25">
+                                            <i class="fas fa-tint"></i>
+                                            <span class="notif-date d-block">{{$notification->created_at}}</span>
+                                        </div>
+                                        <div class="d-inline float-right notif-info w-75 pr-1 pt-1">
+                                            <strong class="notif-username">{{$notification['data']['sender_name']}}</strong>
+                                            <span class="notif-info text-dark"> a publier un demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
+                                                <span class="badge badge-danger">New</span>
+                                            </span>
+                                        </div>
+                                    </button>
+                                    </form>
+                                    @endif
+                                    @endforeach
                                 </div>
                                 
                             </li>
@@ -120,7 +154,7 @@
             </div>
             <a href="{{route('home') }}">
                 <div class="home-bd bd-prop">
-                    <i class="fas fa-home icons-bd"></i>
+                    <i class="fas fa-plus icons-bd"></i>
                 </div>
             </a>
             <a href="{{route('request.create') }}">
@@ -136,5 +170,6 @@
         </div>
         @endauth
     </div>
+    
 </body>
 </html>

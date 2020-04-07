@@ -56,15 +56,23 @@
                 
                 <div class="form-group row">
                     <div class="col">
-                        <input id="nbMax" type="number"  min="3" max="100" step="1" class="form-control @error('nbMax') is-invalid @enderror" name="nbMax" value="{{ old('nbMax') ?? '5'}}" required autocomplete="nbMax"  placeholder="Nember Max">
+                        <input id="deadline" type="text"  class="form-control @error('deadline') is-invalid @enderror" name="deadline" value="{{ old('deadline')}}" required autocomplete="deadline"  placeholder="La Date Limite (yyyy/mm/dd)">
 
-                        @error('nbMax')
+                        @error('deadline')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
                 </div>
+                <script>
+                    $( function() {
+                      $( "#deadline" ).datepicker({
+                        changeMonth: true,
+                        changeYear: true
+                      });
+                    } );
+                    </script>
                 <div class="form-group row">
                     <div class="col">
                         <textarea cols="30" rows="7" id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required placeholder="description"></textarea>

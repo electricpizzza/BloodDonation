@@ -49516,17 +49516,56 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/myApp/resourc
 
 let city;
 $(this).ready(function () {
-  $("input[type='number']").inputSpinner();
+
+                                 
+  var pusher = new Pusher('45e85e66fe60a9c29dc9', {
+    cluster: 'eu',
+    forceTLS: true
+  });
+//------- Notifications-------//
+  var channel = pusher.subscribe('my-channel');
+  channel.bind('Notification', function(data) {
+    let notification =`<a class="notif-bd-bloodr w-100 btn bg-info" href="/${data.notification.id}/planning">
+    <div class="d-inline float-left notif-icon w-25">
+        <i class="fas fa-tint"></i>
+        <span class="notif-date d-block">${data.notification.deadline}</span>
+    </div>
+    <div class="d-inline float-right notif-info w-75 pr-1 pt-1">
+        <strong class="notif-username">${data.notification.sender_name}</strong>
+        <span class="notif-info text-dark"> a publier un demand de sang type : <strong>${data.notification.bloodType}</strong>
+            <span class="badge badge-danger">New</span>
+        </span>
+    </div>
+</a> `;
+    $("#notifCount").html(parseInt($("#notifCount").html())+1);
+    let notifications=document.getElementById('notifications');
+    $(notification).insertBefore(notifications.firstChild);
+  });
   navigator.geolocation;
   navigator.geolocation.getCurrentPosition(loc=>{
+alert('fg');
+
+
+//------For location----//
     const long=loc.coords.longitude;
     const lati=loc.coords.latitude;
     const apiKey = `0244cef8afc840`
-      fetch(`https://us1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${lati}&lon=${long}&format=json`).then(resp=>resp.json()).then(data=>{
+      fetch(`https://eu1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${lati}&lon=${long}&accept-language=fr&format=json`).then(resp=>resp.json()).then(data=>{
           city = data.address.city;
+          $("#city").val(city);
+          $("#address").val(data.display_name);
       }).catch(err=>console.error(err.code));
   });
-  
+  const deadlines = document.querySelectorAll(".deadline");
+  const notifdates = document.querySelectorAll(".notif-date");
+  for (let index = 0; index < notifdates.length; index++) {
+    const element = notifdates[index];
+    $(element).html(moment($(element).html(), "YYYYMMDD").fromNow());
+}
+    for (let index = 0; index < deadlines.length; index++) {
+        const element = deadlines[index];
+        $(element).html(moment($(element).html(), "YYYYMMDD").fromNow());
+    }
 });
 function validat(form){
   $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);

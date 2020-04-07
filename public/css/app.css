@@ -5290,6 +5290,7 @@ input[type=button].btn-block {
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
+  padding-top: 20px;
 }
 
 .page-link {
@@ -5298,14 +5299,14 @@ input[type=button].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #3490dc;
+  color: rgb(250, 92, 158);
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #1d68a7;
+  color: rgb(255, 0, 106);
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -5331,8 +5332,8 @@ input[type=button].btn-block {
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: rgb(255, 0, 106);
+  border-color: rgb(255, 0, 106);
 }
 
 .page-item.disabled .page-link {
@@ -11102,4 +11103,7 @@ a.text-dark:focus {
   width: 300px;
   max-height: 200px;
   overflow: scroll;
+}
+.twitter{
+  margin: 2px;
 }

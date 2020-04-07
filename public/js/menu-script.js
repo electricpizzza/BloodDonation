@@ -7,23 +7,24 @@ $(function () {
 
             $("#menu-bd").css("backgroundColor", "#ff596d");
             $("#menu-layout").animate({
-                top: '50vh',
-                right: '-250px',
+                top: '65vh',
+                right: '-350px',
                 opacity: 1
             }, 100);
             $(".bd-prop").show();
             $(".home-bd").animate({
-                top: '110px',
-                left: '-150px',
+                top: '30px',
+                left: '-100px',
                 opacity: 1
             }, 100);
             $(".contact-bd").animate({
-                top: '-90px',
-                left: '150px',
+                top: '-290px',
+                left: '50px',
                 opacity: 1
             }, 300);
             $(".about-bd").animate({
-                top: '50px',
+                top: '-175px',
+                left: '-75px',
                 opacity: 1
             }, 200);
             menustat = 1;
@@ -56,6 +57,4 @@ $(function () {
 
 
     });
-
-
 });

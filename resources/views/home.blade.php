@@ -18,16 +18,30 @@
                     <p class="card-address"><b>Address : </b>{{$request->address}}</p>
                     <p>{{$request->description}}</p>
                     <div class="d-flex justify-content-between">
-                        <div class="text-primary">{{$request->created_at}}</div>
-                        <div class="card-link">
+                        <div class="text-info deadline">{{$request->deadline}}</div>
+                        <div class="card-link d-flex">
                             <a href=""><i class="fas fa-paper-plane p-1"></i></a>
-                            <a href=""><i class="fas fa-share p-1"></i></a>
+                                <a href="#" id="notificationDropdown" class="dropdown d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-share p-1"></i>
+                                </a>
+                                <!------share------>
+
+                                <div class="dropdown-menu dropdown-menu-right pl-1 pr-1" aria-labelledby="notificationDropdown">
+                                    <small class="text-secondary">Partager :</small>
+                                   <div class="d-flex justify-content-between ">
+                                    <div class="fb-share-button" data-href="/bloodrequest/{{$request->id}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+                                    <div class="twitter"><a href="/bloodrequest/{{$request->id}}" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+                                    <div class=""><script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url="/bloodrequest/{{$request->id}}"></script></div>
+                                   </div>
+                                </div>
+                                
                         </div>
                     </div>
                 </div>
             </div>
+            
             @endforeach
-            <div class="card m-2 card-bd-post card-bd">
+            {{-- <div class="card m-2 card-bd-post card-bd">
                 <div class="card-head card-bd-head">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
                     <h1 class="d-inline m-3 float-right blood-type">O-</h1>
@@ -70,7 +84,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+            <div class="col ml-md-5"><?=$requests->render()?></div>
         </div>
         <div class="col-md-4 col-0 mt-md-0 mt-5">
             <h5 class="title p-2">À Votre Proximité</h5>
