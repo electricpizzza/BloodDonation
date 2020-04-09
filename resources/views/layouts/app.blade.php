@@ -80,7 +80,9 @@
                                 <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
                                 
                                 <div class="dropdown-menu dropdown-menu-right notif-bd" aria-labelledby="notificationDropdown" id="notifications">
-                                   
+                                    @if (auth()->user()->notifications->count()==0)
+                                        <p class="bg-light m-2 p-1" style="text-align:center">Vous n'avez aucune notification</p>
+                                    @endif
                                     @foreach (auth()->user()->notifications as $notification)
                                         @if ($notification->read_at!=null)
                                         <a class="notif-bd-bloodr w-100 btn bg-light" id="{{$notification->id}}" href="/bloodrequest/{{$notification['data']['id']}}">
@@ -95,7 +97,7 @@
                                             </div>
                                         </a> 
                                         @else    
-                                    <form id="logout-form" action="/notifications/{{$notification->id}}/{{$notification['data']['id']}}" method="POST"  >
+                                    <form  action="/notifications/{{$notification->id}}/{{$notification['data']['id']}}" method="POST"  >
                                     <button type="submit" class="notif-bd-bloodr w-100 btn bg-info" id="{{$notification->id}}" href="/bloodrequest/{{$notification['data']['id']}}">
                                         @csrf                                        
                                         <div class="d-inline float-left notif-icon w-25">
@@ -157,7 +159,7 @@
                     <i class="fas fa-plus icons-bd"></i>
                 </div>
             </a>
-            <a href="{{route('request.create') }}">
+            <a href="{{route('message.show') }}">
                 <div class="about-bd bd-prop">
                     <i class="fas fa-paper-plane icons-bd"></i>
                 </div>
@@ -168,8 +170,10 @@
                 </div>
             </a>
         </div>
+        <div aria-live="polite"  id="toasts" aria-atomic="true" style="position: fix; min-height: 200px;">
+            
+        </div>
         @endauth
     </div>
-    
 </body>
 </html>

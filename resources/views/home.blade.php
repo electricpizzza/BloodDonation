@@ -6,21 +6,21 @@
         <div class="col-md-8">
             @foreach ($requests as $request)
             <div class="card m-2 card-bd-req card-bd">
-                <div class="card-head card-bd-head">
+                <a class="card-head card-bd-head" href="/bloodrequest/{{$request->id}}">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
                     <h1 class="d-inline m-3 float-right blood-type">{{$request->bloodType}}</h1>
                     <div class="mt-4 card-bd-info d-inline float-left">
                         <h3 class="m-0 card-username">{{$request->user->name}}</h3>
-                        <h6 class="card-ville">{{$request->city}}</h6>
+                        <h6 class="card-ville"><strong>Ville - </strong>{{$request->city}}</h6>
                     </div>
-                </div>
+                </a>
                 <div class="card-body card-bd-body float-left d-inline">
                     <p class="card-address"><b>Address : </b>{{$request->address}}</p>
                     <p>{{$request->description}}</p>
                     <div class="d-flex justify-content-between">
                         <div class="text-info deadline">{{$request->deadline}}</div>
                         <div class="card-link d-flex">
-                            <a href=""><i class="fas fa-paper-plane p-1"></i></a>
+                            <a href="/bloodrequest/{{$request->id}}"><i class="fas fa-paper-plane p-1"></i></a>
                                 <a href="#" id="notificationDropdown" class="dropdown d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fas fa-share p-1"></i>
                                 </a>
@@ -41,21 +41,25 @@
             </div>
             
             @endforeach
-            {{-- <div class="card m-2 card-bd-post card-bd">
+             <div class="card m-2 card-bd-post card-bd">
                 <div class="card-head card-bd-head">
                     <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
-                    <h1 class="d-inline m-3 float-right blood-type">O-</h1>
                     <div class="mt-4 card-bd-info d-inline float-left">
-                        <h3 class="m-0 card-username">ZAKARAIE DINAR</h3>
+                        <h3 class="m-0 card-username">Association Amal</h3>
                         <h6 class="card-ville">Fès-Boulemane</h6>
                     </div>
                 </div>
                 <div class="card-body card-bd-body float-left d-inline">
+                    <div class="media">
+                        <a class="d-flex align-self-bottom" href="#">
+                              <img width="100%" src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/182FF/production/_107317099_blooddonor976.jpg" alt="">
+                        </a>
+                    </div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
                     dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
                     modi minus.
                     <div class="d-flex justify-content-between">
-                        <div class="text-primary">{{$request->created_at}}</div>
+                        <div class="text-primary">in 12 days</div>
                         <div style="font-size:20px">
                             <a href=""><i class="fas fa-paper-plane p-1"></i></a>
                             <a href=""><i class="fas fa-share p-1"></i></a>
@@ -77,14 +81,14 @@
                     dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
                     modi minus.
                     <div class="d-flex justify-content-between">
-                        <div class="text-primary">{{$request->created_at}}</div>
+                        <div class="text-primary">in 5 days</div>
                         <div style="font-size:20px">
                             <a href=""><i class="fas fa-paper-plane p-1"></i></a>
                             <a href=""><i class="fas fa-share p-1"></i></a>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div> 
             <div class="col ml-md-5"><?=$requests->render()?></div>
         </div>
         <div class="col-md-4 col-0 mt-md-0 mt-5">

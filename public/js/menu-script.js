@@ -55,6 +55,5 @@ $(function () {
             setTimeout(function () { $(".bd-prop").hide(); }, 300);
         }
 
-
     });
 });

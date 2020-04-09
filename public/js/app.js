@@ -49516,8 +49516,7 @@ module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/myApp/resourc
 
 let city;
 $(this).ready(function () {
-
-                                 
+         
   var pusher = new Pusher('45e85e66fe60a9c29dc9', {
     cluster: 'eu',
     forceTLS: true
@@ -49525,7 +49524,10 @@ $(this).ready(function () {
 //------- Notifications-------//
   var channel = pusher.subscribe('my-channel');
   channel.bind('Notification', function(data) {
-    let notification =`<a class="notif-bd-bloodr w-100 btn bg-info" href="/${data.notification.id}/planning">
+    console.log(data);
+    
+                                    ///notifications/{{$notification->id}}/{{$notification['data']['id']}}
+    let notification =`<a class="notif-bd-bloodr w-100 btn bg-info" href="/home">
     <div class="d-inline float-left notif-icon w-25">
         <i class="fas fa-tint"></i>
         <span class="notif-date d-block">${data.notification.deadline}</span>
@@ -49537,15 +49539,35 @@ $(this).ready(function () {
         </span>
     </div>
 </a> `;
-    $("#notifCount").html(parseInt($("#notifCount").html())+1);
+let notifCount = parseInt($("#notifCount").html());
+notifCount++;
+$("#notifCount").html(notifCount);
     let notifications=document.getElementById('notifications');
     $(notification).insertBefore(notifications.firstChild);
+
+let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" style="position: absolute; top: 70vh; right: 10px;">
+<div class="toast-header">
+  <img src="/img/img.png" width="20px" class="rounded mr-2" alt="...">
+  <strong class="mr-auto">${data.notification.sender_name}</strong>
+  <small>Now</small>
+  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="toast-body">
+<strong class="notif-username">${data.notification.sender_name}</strong>
+<span class="notif-info text-dark"> a publier un demand de sang type : <strong>${data.notification.bloodType}</strong>
+    <span class="badge badge-danger">New</span>
+</span>
+</div>
+</div>`;
+    $("#toasts").append(toastNotif);
+    $(".toast").toast("show");
+
   });
   navigator.geolocation;
   navigator.geolocation.getCurrentPosition(loc=>{
-alert('fg');
-
-
+   
 //------For location----//
     const long=loc.coords.longitude;
     const lati=loc.coords.latitude;
@@ -49554,6 +49576,8 @@ alert('fg');
           city = data.address.city;
           $("#city").val(city);
           $("#address").val(data.display_name);
+
+         
       }).catch(err=>console.error(err.code));
   });
   const deadlines = document.querySelectorAll(".deadline");
@@ -49566,8 +49590,31 @@ alert('fg');
         const element = deadlines[index];
         $(element).html(moment($(element).html(), "YYYYMMDD").fromNow());
     }
+
+    $(".toast").toast("show");
+    const blood = $("#bloodtype").html();
+    var res = blood.replace("+",`<sup>+</sup>`);
+    var res = blood.replace("-",`<sup>-</sup>`);
+    $("#bloodtype").html(res);
+  
 });
 function validat(form){
   $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
   return true;
 }
+
+$("#send").click(function (e) { 
+  $("#conversation").append(`<div class="row my-3 main-user">
+  <div class="col-lg-6"></div>
+  <div class="col-lg-6 pt-2 main-user-bubble">
+      <span class="message-bd pl-3">
+          ${$("#message").val()}
+      </span>
+      <h6 class="text-right massage-time-bd">
+          ${new Date().toLocaleTimeString()}
+      </h6>
+  </div>
+</div>`);
+$("#message").val("");
+
+});

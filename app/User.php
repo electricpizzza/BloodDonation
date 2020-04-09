@@ -42,6 +42,16 @@ class User extends Authenticatable
         return $this->hasMany(BloodRequest::class);
     }
 
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
     public function caravan()
     {
         return $this->hasOne(Caravan::class);

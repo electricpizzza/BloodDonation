@@ -93,6 +93,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 p {
@@ -11107,3 +11108,253 @@ a.text-dark:focus {
 .twitter{
   margin: 2px;
 }
+  .post-bd {
+        box-shadow: 0px 0px 20px rgba(255, 73, 73, 0.205);
+        border-radius: 20px;
+        background-image: url("/img/background.png");
+        background-color: rgb(255, 255, 255);
+        animation-name: loading;
+        animation-duration: 1s;
+        margin-bottom: 100px;
+    }
+
+    .username-bd-post {
+        font-family: 'Poppins' !important;
+        font-weight: bold;
+        color: rgb(79, 89, 226);
+    }
+
+    .ville-bd-post {
+        font-family: 'Poppins' !important;
+        color: rgb(207, 207, 207);
+    }
+
+    .bloodt-bd-post {
+        font-family: 'Poppins' !important;
+        font-size: 100px;
+        font-weight: bolder;
+        color: rgb(243, 62, 86);
+
+    }
+
+    .speech-bubble-bd {
+        position: relative;
+        background: #ffedf0;
+        border-radius: .6em;
+        height: 280px;
+        font-size: 22px;
+        color: rgb(58, 52, 146);
+    }
+
+    .speech-bubble-bd:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 6%;
+        width: 0;
+        height: 0;
+        border: 25px solid transparent;
+        border-bottom-color: #ffedf0;
+        border-top: 0;
+        margin-left: -25px;
+        margin-top: -25px;
+    }
+
+    .date-bd {
+        color: rgb(255, 106, 118);
+        font-weight: bold;
+    }
+
+    .photo-bd-post {
+        width: 150px;
+        height: 120px;
+    }
+
+    @keyframes loading {
+        0% {
+            opacity: 0.1;
+            transform: translateX(-1500px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .drop-bd {
+        font-size: 120px;
+        color: rgb(255, 215, 220);
+        position: relative;
+        left: 80px;
+        z-index: 0;
+    }
+
+    .bloodl-bd {
+        z-index: 10;
+        position: relative;
+    }
+
+    .replay-bd-post {
+        border-radius: 30px !important;
+        border: 1px solid rgb(229, 181, 193) !important;
+        position: relative;
+        padding: 20px !important;
+    }
+
+    .replay-bd-post::-webkit-input-placeholder {
+        color: rgb(188, 138, 153) !important;
+        font-weight: normal;
+        font-size: 15px;
+        background-color: transparent !important;
+    }
+
+    .replay-bd-post:focus,
+    textarea {
+        outline: none;
+        box-shadow: 0px 0px 5px rgba(255, 0, 106, 0.5) !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .ajouter-bd-post {
+        cursor: pointer;
+        background-color: rgb(255, 104, 104);
+        color: white;
+        border-radius: 20px;
+        vertical-align: top;
+        font-weight: bold;
+        font-size: 18px;
+        outline: none !important;
+    }
+
+    .ajouter-bd-post:focus {
+        background-color: rgb(104, 119, 255);
+        color: white;
+        outline: none !important;
+    }
+
+    .share-bd-post {
+        font-size: 30px;
+        color: blue;
+        cursor: pointer;
+    }
+    .chat-bd {
+      height: 600px !important;
+      box-shadow: 0px 0px 10px rgba(121, 121, 255, 0.3);
+      border-radius: 15px;
+      background: url("background.png");
+  }
+
+  .chat-users-bd {
+      border-right: 2px solid rgba(121, 121, 255, 0.2);
+      height: 600px !important;
+      overflow-y: scroll;
+  }
+
+  .chat-header {
+      font-weight: bold;
+      font-size: 26px;
+      color: rgb(52, 30, 129);
+  }
+
+  .username-chat-bd {
+      font-weight: bold;
+      color: rgb(39, 3, 241);
+  }
+
+  .single-user-bd {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(153, 206, 255, 0.3);
+      cursor: pointer;
+  }
+
+  .is-connected {
+      color: springgreen !important;
+  }
+
+  .is-deconnected {
+      color: rgb(156, 156, 156) !important;
+  }
+
+  .chat-with-bd {
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(153, 206, 255, 0.3);
+      border-radius: 15px;
+  }
+
+  .chat-with-name-bd {
+      color: rgb(72, 119, 248);
+      font-weight: bold;
+      font-size: 30px;
+  }
+
+  .chat-ca-bd {
+      color: rgb(170, 195, 241);
+      font-weight: lighter;
+  }
+
+  .chat-section-bd {
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(153, 206, 255, 0.3);
+      border-radius: 15px;
+      height: 450px;
+  }
+
+  .chat-message-bd {
+    
+  }
+
+  .envoi-message-bd {
+      border-radius: 30px !important;
+      border: 1px solid rgb(181, 206, 229) !important;
+      position: relative;
+      padding: 20px !important;
+  }
+
+  .envoi-message-bd::-webkit-input-placeholder {
+      color: rgb(138, 154, 188) !important;
+      font-weight: normal;
+      font-size: 15px;
+      background-color: transparent !important;
+  }
+
+  .envoi-message-bd:focus,
+  textarea {
+      outline: none;
+      box-shadow: 0px 0px 5px rgba(25, 0, 255, 0.5) !important;
+      border: 1px solid rgb(204, 204, 204) !important;
+  }
+
+  .send-icon-bd {
+      padding: 5px;
+      border-radius: 50px;
+      height: 40px;
+      width: 40px;
+      border: none;
+      color: rgb(229, 218, 255);
+      font-size: 20px;
+      background-color: rgb(38, 0, 255);
+
+  }
+
+  .main-user-bubble {
+
+      background-color: rgb(87, 87, 253);
+      border-radius: 20px;
+      color: rgb(243, 243, 243);
+  }
+
+  .img-dec {
+      filter: grayscale(1);
+  }
+
+  .other-user-bubble {
+      background-color: rgb(236, 236, 255);
+      border-radius: 20px;
+      color: rgb(49, 49, 49);
+  }
+
+  .massage-time-bd {
+      font-size: 11px;
+  }

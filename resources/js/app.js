@@ -32,3 +32,17 @@ function validat(form){
   $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
   return true;
 }
+
+$(selector).click(function (e) { 
+  e.preventDefault();
+  const message = $("#message").val();
+  const conversation;
+  const user;
+  $.ajax({
+    type: "post",
+    url: `/send/${conversation}/${user}/${message}`,
+    success: function (response) {
+      
+    }
+  });
+});

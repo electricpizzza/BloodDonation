@@ -13,6 +13,13 @@ class BloodRequestController extends Controller
     public function __construct() {
         $this->middleware('auth');
     }
+
+    public function index($postid) {
+        $request = \App\BloodRequest::find($postid);
+        return view('request.request',compact('request'));
+    }
+   
+
     public function store()
     {
         $request = request()->validate([
