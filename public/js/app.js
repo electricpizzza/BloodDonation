@@ -49524,9 +49524,6 @@ $(this).ready(function () {
 //------- Notifications-------//
   var channel = pusher.subscribe('my-channel');
   channel.bind('Notification', function(data) {
-    console.log(data);
-    
-                                    ///notifications/{{$notification->id}}/{{$notification['data']['id']}}
     let notification =`<a class="notif-bd-bloodr w-100 btn bg-info" href="/home">
     <div class="d-inline float-left notif-icon w-25">
         <i class="fas fa-tint"></i>
@@ -49565,6 +49562,9 @@ let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" styl
     $(".toast").toast("show");
 
   });
+
+ 
+
   navigator.geolocation;
   navigator.geolocation.getCurrentPosition(loc=>{
    
@@ -49603,18 +49603,37 @@ function validat(form){
   return true;
 }
 
-$("#send").click(function (e) { 
-  $("#conversation").append(`<div class="row my-3 main-user">
-  <div class="col-lg-6"></div>
-  <div class="col-lg-6 pt-2 main-user-bubble">
-      <span class="message-bd pl-3">
-          ${$("#message").val()}
-      </span>
-      <h6 class="text-right massage-time-bd">
-          ${new Date().toLocaleTimeString()}
-      </h6>
-  </div>
-</div>`);
-$("#message").val("");
+function send (itemId) { 
+  let message = $("#message").val();
+  let now = new Date().toLocaleDateString();
+  $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+  $.ajax({
+      type: "post",
+      url: `/message/${itemId}`,
+      data: {message: message},
+      success: function (response) {
+          console.log("Message : ",response);
+          let bubble = `<div class="row my-3 main-user">
+          <div class="col-lg-6"></div>
+          <div class="col-lg-6 pt-2 main-user-bubble">
+              <span class="message-bd pl-3">
+                  ${message} 
+              </span>
+              <h6 class="text-right massage-time-bd">
+                  ${now} 
+              </h6>
+          </div>
+        </div>`
+          $('#conversation').append(bubble);
+          //$('#conversation').scrollTop(600);
 
-});
+          // $('#conversation').scrollTop($("#conversation").height());
+          $('#conversation').scrollTop($('#conversation').height());
+          $("#message").val("")
+      }
+  });
+}

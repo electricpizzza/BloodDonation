@@ -12,6 +12,8 @@
 */
 
 use App\BloodRequest;
+use App\Conversation;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     //$requests = \App\BloodRequest::latest()->paginate(5);
@@ -43,3 +45,10 @@ Route::post('/notifications/{notificationid}/{postid}',  function ($notification
 Route::post('/messagerie/{blood_request_id}', 'MessagerieController@respond')->name('message.store');
 
 Route::get('/inbox', 'MessagerieController@index')->name('message.show');
+
+Route::get('/inbox/{conversation}', 'MessagerieController@conversation');
+
+Route::post('/message/{conversation}', 'MessagerieController@send');
+
+Route::get('/caravan/{caravan}', 'CaravanController@index')->name('caravan.show');
+Route::get('/caravan/{caravan}/edit', 'CaravanController@edit');

@@ -35,6 +35,7 @@
 </head>
 <body>
     <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -71,7 +72,7 @@
                             <li class="nav-item dropdown">
                                 <a href="#" id="notificationDropdown" class="nav-link d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
-                                    @if (auth()->user()->unreadNotifications->count()!=0)
+                                    @if (auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()!=0)
                                     <span class="badge badge-danger badge-pill m-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->count()}}</span>
                                     @endif
                                 </a>
@@ -80,10 +81,10 @@
                                 <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
                                 
                                 <div class="dropdown-menu dropdown-menu-right notif-bd" aria-labelledby="notificationDropdown" id="notifications">
-                                    @if (auth()->user()->notifications->count()==0)
+                                    @if (auth()->user()->notifications->where('type','App\Notifications\InNotif')->count()==0)
                                         <p class="bg-light m-2 p-1" style="text-align:center">Vous n'avez aucune notification</p>
                                     @endif
-                                    @foreach (auth()->user()->notifications as $notification)
+                                    @foreach (auth()->user()->notifications->where('type','App\Notifications\InNotif') as $notification)
                                         @if ($notification->read_at!=null)
                                         <a class="notif-bd-bloodr w-100 btn bg-light" id="{{$notification->id}}" href="/bloodrequest/{{$notification['data']['id']}}">
                                             <div class="d-inline float-left notif-icon w-25">
@@ -173,6 +174,7 @@
         <div aria-live="polite"  id="toasts" aria-atomic="true" style="position: fix; min-height: 200px;">
             
         </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
         @endauth
     </div>
 </body>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BloodRequest;
 use App\Caravan;
 use App\User;
 use Illuminate\Http\Request;
@@ -10,10 +11,18 @@ class CaravanController extends Controller
 {
     public function index(Caravan $caravan)
     {
-        dd($caravan->id);
-        return view('caravan.caravan',compact('caravan'));
+        $elments =  $caravan
+        ->join('blood_requests','blood_requests.caravan_id','=','caravans.id')
+        ->join('events','events.caravan_id','=','caravans.id')
+        //->join('posts','posts.caravan_id','=','caravans.id')
+        ->select('blood_requests.*','events.*')
+        ->get();
+        return view('caravans.caravan',compact('caravan','elments'));
     }
-
+    public function edit(Caravan $caravan)
+    {
+        return view('caravans.edit',compact('caravan'));
+    }
 
     public function store(Request $request)
     {

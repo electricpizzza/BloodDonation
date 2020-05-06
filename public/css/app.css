@@ -4232,6 +4232,7 @@ input[type=button].btn-block {
 .custom-file-input:focus ~ .custom-file-label {
   border-color: #a1cbef;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  
 }
 
 .custom-file-input:disabled ~ .custom-file-label {
@@ -11299,6 +11300,7 @@ a.text-dark:focus {
       box-shadow: 0px 0px 10px rgba(153, 206, 255, 0.3);
       border-radius: 15px;
       height: 450px;
+      overflow: scroll;
   }
 
   .chat-message-bd {
@@ -11358,3 +11360,113 @@ a.text-dark:focus {
   .massage-time-bd {
       font-size: 11px;
   }
+
+  
+  .cov-img {
+    width: 100%;
+    height: 210px;
+    z-index: 10;
+}
+
+.profile-bd {}
+
+.pdp-img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    bottom: 80px;
+    left: 35%;
+    border: 3px solid white;
+
+}
+
+.modif-prof-bd {
+    border: none;
+    border-radius: 20px;
+    background: rgb(33, 79, 179);
+    color: white;
+    outline: none !important;
+    transition: 0.5s;
+    position: relative;
+    left: 66%;
+    bottom: 125px;
+}
+
+.modif-prof-bd:hover {
+    box-shadow: 0px 0px 20px rgba(25, 151, 235, 1);
+}
+
+.profile-name {
+    font-weight: bold;
+    position: relative;
+    bottom: 100px;
+    color: rgb(26, 34, 71);
+    border-radius: 20px;
+
+}
+
+.profile-section {
+    border-radius: 20px;
+    background-color: rgb(249, 249, 255);
+    box-shadow: 0px 0px 20px rgba(25, 151, 235, 0.3);
+}
+
+.stat-profile {
+    position: relative;
+    bottom: 60px;
+}
+
+.desc-profile {
+    color: rgb(159, 159, 163);
+    position: relative;
+    bottom: 30px;
+}
+
+.title-profile {
+    font-weight: bolder;
+    color: rgb(26, 34, 71);
+    font-size: 40px;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: rgb(116, 132, 202) !important;
+    font-weight: normal;
+    font-size: 20px;
+    background-color: transparent !important;
+
+}
+
+
+
+
+
+
+
+.pdp-upload {
+    width: 50%;
+}
+
+.cov-upload {
+    width: 50%;
+}
+
+.pdp-change {
+    font-weight: bold;
+    color: rgb(37, 30, 105);
+    font-size: 20px !important;
+}
+
+.btn-confirm {
+    border: none;
+    border-radius: 30px;
+    background: rgb(95, 181, 187);
+    color: rgb(226, 226, 226);
+    outline: none !important;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: 18px;
+    width: 50px;
+    border-radius: 20px !important;
+    padding: 10px;
+    width: 50% !important;
+}

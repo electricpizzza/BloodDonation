@@ -25,16 +25,15 @@
                                     <i class="fas fa-share p-1"></i>
                                 </a>
                                 <!------share------>
-
                                 <div class="dropdown-menu dropdown-menu-right pl-1 pr-1" aria-labelledby="notificationDropdown">
                                     <small class="text-secondary">Partager :</small>
-                                   <div class="d-flex justify-content-between ">
-                                    <div class="fb-share-button" data-href="/bloodrequest/{{$request->id}}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
-                                    <div class="twitter"><a href="/bloodrequest/{{$request->id}}" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-                                    <div class=""><script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url="/bloodrequest/{{$request->id}}"></script></div>
-                                   </div>
-                                </div>
-                                
+                                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                        <a class="a2a_button_facebook" data-href="/bloodrequest/{{$request->id}}"  data-href="/bloodrequest/{{$request->id}}" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" ></a>
+                                        <a class="a2a_button_twitter" href="/bloodrequest/{{$request->id}}"></a>
+                                        <a class="a2a_button_whatsapp"></a>
+                                        <a class="a2a_button_reddit" data-href="/bloodrequest/{{$request->id}}"  href="https://www.reddit.com/submit?url=/bloodrequest/{{$request->id}}"></a>
+                                    </div>
+                                </div>                                
                         </div>
                     </div>
                 </div>
