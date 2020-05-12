@@ -8,7 +8,7 @@
                 <div class="container-fluid profile-section p-0">
                     <div class="row justify-content-left align-items-left p-0">
                         <div class="col-lg-12">
-                            <img class="cov-img text-center" src="coverture.png" alt="">
+                            <img class="cov-img text-center" src="https://image.freepik.com/free-vector/teamwork-blood-donor-illustration_10045-362.jpg" alt="">
                             <img class="pdp-img rounded-circle p-0 m-0" src="https://thumbs.dreamstime.com/b/ambulance-badge-icon-simple-glyph-flat-vector-blood-donation-icons-ui-ux-website-mobile-application-white-179923520.jpg" alt="">
                         </div>
                     </div>
@@ -34,10 +34,11 @@
                     </div>
                     <div class="row text-center align-items-center justify-content-center">
                         <div class="col-lg-10">
-                            <p class="desc-profile">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Perspiciatis, odio? Labore
-                                perferendis distinctio harum architecto consequuntur? Nisi nesciunt ea soluta nihil quia
-                                deserunt consequuntur temporibus, ipsa, ut ex voluptas necessitatibus?</p>
+                            <p class="desc-profile">
+                                Ville : Fes <br>
+                                Address : Place florence Ville Nouvelle, Fes <br>
+                                Actualement  : <span class="ai-font-bold text-success">Ouvert</span> <br>
+                            </p>
                         </div>
 
                     </div>
@@ -46,14 +47,35 @@
 
 
             </div>
-            <div class="col-lg-8">
-                {{$elments}}
+            <div class="col-lg-8">                
                 <div class="container-fluid profile-section p-5">
+                    <div class="card m-2 card-bd-event card-bd">
+                        <div class="card-head card-bd-head">
+                            <img src="https://thumbs.dreamstime.com/b/ambulance-badge-icon-simple-glyph-flat-vector-blood-donation-icons-ui-ux-website-mobile-application-white-179923520.jpg" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
+                            <h1 class="d-inline m-3 float-right blood-type">O-</h1>
+                            <div class="mt-4 card-bd-info d-inline float-left">
+                                <h3 class="m-0 card-username">Caravan de Paix</h3>
+                                <h6 class="card-ville">Fès-Boulemane</h6>
+                            </div>
+                        </div>
+                        <div class="card-body card-bd-body float-left d-inline">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
+                            dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
+                            modi minus.
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary">in 5 days</div>
+                                <div style="font-size:20px">
+                                    <a href=""><i class="fas fa-paper-plane p-1"></i></a>
+                                    <a href=""><i class="fas fa-share p-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                     <div class="card m-2 card-bd-post card-bd">
                         <div class="card-head card-bd-head">
-                            <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
+                            <img src="https://thumbs.dreamstime.com/b/ambulance-badge-icon-simple-glyph-flat-vector-blood-donation-icons-ui-ux-website-mobile-application-white-179923520.jpg" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
                             <div class="mt-4 card-bd-info d-inline float-left">
-                                <h3 class="m-0 card-username">Association Amal</h3>
+                                <h3 class="m-0 card-username">Caravan de Paix</h3>
                                 <h6 class="card-ville">Fès-Boulemane</h6>
                             </div>
                         </div>
@@ -75,28 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card m-2 card-bd-event card-bd">
-                        <div class="card-head card-bd-head">
-                            <img src="img/img.png" class="mt-4 m-3 float-left card-img-top rounded-circle" alt="...">
-                            <h1 class="d-inline m-3 float-right blood-type">O-</h1>
-                            <div class="mt-4 card-bd-info d-inline float-left">
-                                <h3 class="m-0 card-username">ZAKARAIE DINAR</h3>
-                                <h6 class="card-ville">Fès-Boulemane</h6>
-                            </div>
-                        </div>
-                        <div class="card-body card-bd-body float-left d-inline">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reprehenderit velit, nostrum laboriosam
-                            dolores impedit magnam facilis, odio corrupti adipisci enim suscipit. Asperiores cumque ex vitae eos aliquam
-                            modi minus.
-                            <div class="d-flex justify-content-between">
-                                <div class="text-primary">in 5 days</div>
-                                <div style="font-size:20px">
-                                    <a href=""><i class="fas fa-paper-plane p-1"></i></a>
-                                    <a href=""><i class="fas fa-share p-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
+                    
                 </div>
 
             </div>

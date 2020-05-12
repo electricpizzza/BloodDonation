@@ -11,13 +11,11 @@ class CaravanController extends Controller
 {
     public function index(Caravan $caravan)
     {
-        $elments =  $caravan
-        ->join('blood_requests','blood_requests.caravan_id','=','caravans.id')
-        ->join('events','events.caravan_id','=','caravans.id')
-        //->join('posts','posts.caravan_id','=','caravans.id')
-        ->select('blood_requests.*','events.*')
-        ->get();
-        return view('caravans.caravan',compact('caravan','elments'));
+        $elements = [];
+        $requests = $caravan->bloodRequests->all();
+        $events = $caravan->events->all();
+        $posts = $caravan->posts->all();
+        return view('caravans.caravan',compact('caravan','elements'));
     }
     public function edit(Caravan $caravan)
     {

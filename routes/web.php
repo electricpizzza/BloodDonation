@@ -12,12 +12,44 @@
 */
 
 use App\BloodRequest;
+use App\Post;
+use App\Event;
 use App\Conversation;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    //$requests = \App\BloodRequest::latest()->paginate(5);
-    return view('welcome');
+    $content =[];
+        $i=0;
+        $requests = BloodRequest::latest()->paginate(5);
+         foreach ($requests as $value) {
+             $content[] = array(
+                'type' =>'request',
+                'request' =>$value,
+                'created_at' => $value->created_at->format('m/d/Y'),
+             );
+         }
+         $events = Event::latest()->paginate(5);
+         foreach ($events as $value) {
+            $content[] = array(
+                'type' =>'event',
+                'event' =>$value,
+                'created_at' => $value->created_at->format('m/d/Y'),
+             );
+         }
+         $posts = Post::latest()->paginate(5);
+         foreach ($posts as $value) {
+            $content[] = array(
+                'type' =>'post',
+                'post' =>$value,
+                'created_at' => $value->created_at->format('m/d/Y'),
+             );
+         }
+
+        usort($content, function( $b,$a) {
+            return $a['created_at'] <=> $b['created_at'];
+        });
+
+    return view('welcome',compact('content','requests'));
 });
 
 Auth::routes();
@@ -31,7 +63,7 @@ Route::get('/{user}/planning', 'HomeController@planning')->name('planning');
 
 Route::get('/request/create', 'BloodRequestController@create')->name('request.create');
 
-Route::get('/bloodrequest/{postid}', 'BloodRequestController@index')->name('request.show');
+Route::get('/bloodrequest/{request}', 'BloodRequestController@index')->name('request.show');
 
 Route::post('/request', 'BloodRequestController@store')->name('request.store');
 
@@ -52,3 +84,13 @@ Route::post('/message/{conversation}', 'MessagerieController@send');
 
 Route::get('/caravan/{caravan}', 'CaravanController@index')->name('caravan.show');
 Route::get('/caravan/{caravan}/edit', 'CaravanController@edit');
+
+Route::get('/more', function () {
+    $user = auth()->user();
+    if($user->caravan!=null)
+        return redirect('/caravan/'.$user->caravan->id);
+    if ( $user->association!=null) 
+        return redirect('/association/'.$user->association->id);
+    return view('more',compact('user'));
+
+})->name('more.show');

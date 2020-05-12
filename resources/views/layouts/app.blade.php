@@ -38,7 +38,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <i class="fas fa-tint text-danger"> D</i>{{ 'rop of Life' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -73,7 +73,7 @@
                                 <a href="#" id="notificationDropdown" class="nav-link d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
                                     @if (auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()!=0)
-                                    <span class="badge badge-danger badge-pill m-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->count()}}</span>
+                                    <span class="badge badge-danger badge-pill m-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()}}</span>
                                     @endif
                                 </a>
                                 <!------Notifications------>
@@ -116,7 +116,6 @@
                                     @endif
                                     @endforeach
                                 </div>
-                                
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -155,7 +154,7 @@
             <div class="menu-button" id="menu-bd">
                 <i class="fas fa-bars icons-bd icons-bd-main"></i>
             </div>
-            <a href="{{route('home') }}">
+            <a href="{{route('more.show') }}">
                 <div class="home-bd bd-prop">
                     <i class="fas fa-plus icons-bd"></i>
                 </div>

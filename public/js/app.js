@@ -15265,14 +15265,14 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 	}
 }
 
-/* Chain conversions given the request and the original response
+/* Chaintconversions given the request and the original response
  * Also sets the responseXXX fields on the jqXHR instance
  */
 function ajaxConvert( s, response, jqXHR, isSuccess ) {
 	var conv2, current, conv, tmp, prev,
 		converters = {},
 
-		// Work with a copy of dataTypes in case we need to modify it for conversion
+		// Work with a copy of dataTypes in case we need to modify it fortconversion
 		dataTypes = s.dataTypes.slice();
 
 	// Create converters map with lowercased keys
@@ -15352,7 +15352,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 						} catch ( e ) {
 							return {
 								state: "parsererror",
-								error: conv ? e : "No conversion from " + prev + " to " + current
+								error: conv ? e : "Notconversion from " + prev + " to " + current
 							};
 						}
 					}
@@ -21145,7 +21145,7 @@ return jQuery;
 
     /**
      * The base implementation of `_.toNumber` which doesn't ensure correct
-     * conversions of binary, hexadecimal, or octal string values.
+     *tconversions of binary, hexadecimal, or octal string values.
      *
      * @private
      * @param {*} value The value to process.
@@ -37416,7 +37416,7 @@ function toString (val) {
 
 /**
  * Convert an input value to a number for persistence.
- * If the conversion fails, return original string.
+ * If thetconversion fails, return original string.
  */
 function toNumber (val) {
   var n = parseFloat(val);
@@ -49603,6 +49603,7 @@ function validat(form){
   return true;
 }
 
+
 function send (itemId) { 
   let message = $("#message").val();
   let now = new Date().toLocaleDateString();
@@ -49629,11 +49630,12 @@ function send (itemId) {
           </div>
         </div>`
           $('#conversation').append(bubble);
-          //$('#conversation').scrollTop(600);
-
-          // $('#conversation').scrollTop($("#conversation").height());
           $('#conversation').scrollTop($('#conversation').height());
-          $("#message").val("")
+          $("#message").val("");
+          let convertion = document.getElementById(`conversation${itemId}`);
+          let before = document.getElementById(`conversationusr`).firstChild;
+          $(convertion).insertBefore(before);          
+          $(`#new${itemId}`).remove();
       }
   });
 }

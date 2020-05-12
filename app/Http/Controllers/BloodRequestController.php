@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BloodRequest;
 use App\Notifications\InNotif;
 use App\User;
 use Illuminate\Http\Request;
@@ -14,8 +15,7 @@ class BloodRequestController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($postid) {
-        $request = \App\BloodRequest::find($postid);
+    public function index(BloodRequest $request) {
         return view('request.request',compact('request'));
     }
    
