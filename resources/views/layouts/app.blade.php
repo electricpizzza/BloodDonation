@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>

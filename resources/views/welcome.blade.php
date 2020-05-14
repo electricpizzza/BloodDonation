@@ -124,7 +124,7 @@
                                 <div class="card-link d-flex">
                                     <a href="/bloodrequest/{{$item['request']->id}}"><i class="fas fa-paper-plane p-1"></i></a>
                                         <a href="#" id="notificationDropdown" class="dropdown d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <i class="fas fa-share p-1"></i>
+                                            <i class="fas fa-share-alt p-1"></i>
                                         </a>
                                         <!------share------>
                                         <div class="dropdown-menu dropdown-menu-right pl-1 pr-1" aria-labelledby="notificationDropdown">
@@ -160,7 +160,7 @@
                                 <div class="card-link d-flex">
                                     <a href="/bloodrequest/{{$item['event']->id}}"><i class="fas fa-paper-plane p-1"></i></a>
                                         <a href="#" id="notificationDropdown" class="dropdown d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <i class="fas fa-share p-1"></i>
+                                            <i class="fas fa-share-alt p-1"></i>
                                         </a>
                                         <!------share------>
                                         <div class="dropdown-menu dropdown-menu-right pl-1 pr-1" aria-labelledby="notificationDropdown">
@@ -186,20 +186,18 @@
                             </div>
                         </div>
                         <div class="card-body card-bd-body float-left d-inline">
-                            <h3>{{$item['post']->title}}</h3>
+                            <h3 class="font-weight-bold">{{$item['post']->title}}</h3>
                             <div class="media">
-                                <a class="d-flex align-self-bottom mb-3" href="#">
-                                      <img width="100%" src="{{$item['post']->image?? ''}}" alt="">
-                                </a>
+                                <div class="d-flex flex-column justify-content-around" href="#">
+                                      <img class="mt-2" width="100%" src="{{$item['post']->image?? ''}}" alt="">
+                                      <p class="m-3">{{$item['post']->description}}</p>
+                                </div>
                             </div>
-                            <p>
-                                {{$item['post']->description}}
-                            </p>
                             <div class="d-flex justify-content-between">
-                                <div class="text-primary">in 12 days</div>
+                                <div class="text-primary"></div>
                                 <div style="font-size:20px">
                                     <a href=""><i class="fas fa-paper-plane p-1"></i></a>
-                                    <a href=""><i class="fas fa-share p-1"></i></a>
+                                    <a href=""><i class="fas fa-share-alt p-1"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -212,4 +210,15 @@
 
         </div>
     </body>
+    <script>
+    const deadlines = document.querySelectorAll(".deadline");
+    moment.locale('fr');
+    for (let index = 0; index < deadlines.length; index++) {
+        const element = deadlines[index];
+        let date = $(element).html().replace(" ","T")
+        date = new Date(date);
+        $(element).html(moment(date, "YYYYMMDD").fromNow());
+    }
+
+    </script>
 </html>

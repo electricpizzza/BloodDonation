@@ -49582,13 +49582,18 @@ let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" styl
   });
   const deadlines = document.querySelectorAll(".deadline");
   const notifdates = document.querySelectorAll(".notif-date");
+  moment.locale('fr');
   for (let index = 0; index < notifdates.length; index++) {
     const element = notifdates[index];
-    $(element).html(moment($(element).html(), "YYYYMMDD").fromNow());
+    let date = $(element).html().replace(" ","T")
+    date = new Date(date);
+    $(element).html(moment(date, "YYYYMMDD").fromNow());
 }
     for (let index = 0; index < deadlines.length; index++) {
         const element = deadlines[index];
-        $(element).html(moment($(element).html(), "YYYYMMDD").fromNow());
+        let date = $(element).html().replace(" ","T")
+        date = new Date(date);
+        $(element).html(moment(date, "YYYYMMDD").fromNow());
     }
 
     $(".toast").toast("show");
