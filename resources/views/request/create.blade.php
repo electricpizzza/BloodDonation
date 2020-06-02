@@ -53,7 +53,6 @@
                         @enderror
                     </div>
                 </div>
-                
                 <div class="form-group row">
                     <div class="col">
                         <input id="deadline" type="text"  class="form-control @error('deadline') is-invalid @enderror" name="deadline" value="{{ old('deadline')}}" required autocomplete="deadline"  placeholder="La Date Limite (yyyy/mm/dd)">
@@ -65,17 +64,14 @@
                         @enderror
                     </div>
                 </div>
-                <script>
-                    $( function() {
-                      $( "#deadline" ).datepicker({
-                        changeMonth: true,
-                        changeYear: true
-                      });
-                    } );
-                    </script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#deadline').datetimepicker();
+                    });
+                </script>
                 <div class="form-group row">
                     <div class="col">
-                        <textarea cols="30" rows="7" id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required placeholder="description"></textarea>
+                        <textarea cols="30" rows="7" id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  required placeholder="description">{{ old('description') }}</textarea>
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

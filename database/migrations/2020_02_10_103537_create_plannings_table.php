@@ -17,6 +17,7 @@ class CreatePlanningsTable extends Migration
             $table->bigIncrements('id');
             $table->date('latestDonation');
             $table->integer('timePeriod');
+            $table->integer('nbDons')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->index('user_id')->unique();
             $table->timestamps();

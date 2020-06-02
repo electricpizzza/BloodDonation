@@ -57,9 +57,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/{user}/setting', 'HomeController@setting')->name('setting');
 
-Route::get('/{user}/planning', 'HomeController@planning')->name('planning');
+Route::get('/setting', 'HomeController@setting')->name('setting');
+
+Route::get('/planning', 'PlanningController@index')->name('planning');
+Route::get('/planningdates', function ()
+{
+    $planning = auth()->user()->planning;
+    return $planning;
+});
+
+Route::post('/planning', 'PlanningController@create')->name('planning.create');
+
 
 Route::get('/request/create', 'BloodRequestController@create')->name('request.create');
 

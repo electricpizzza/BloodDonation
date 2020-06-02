@@ -11,14 +11,26 @@
 
     <!-- Scripts -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+                   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css"> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+    
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
     <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
     <script src="{{ asset('js/menu-script.js') }}"></script>
+
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
     <!-- Fonts -->
@@ -27,10 +39,12 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
     <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themeCal.css') }}">
 
 </head>
 <body>
@@ -123,10 +137,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/planning">
+                                    <a class="dropdown-item d-flex justify-content-between" href="/planning">
                                         {{ __('Planning') }}<img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>
                                     </a>
-                                    <a class="dropdown-item d-flex justify-content-between" href="/{{auth()->user()->id}}/setting">
+                                    <a class="dropdown-item d-flex justify-content-between" href="/setting">
                                         {{ __('Paramètre') }}<img src="https://img.icons8.com/material-sharp/24/636363/settings.png"/>
                                     </a>
                                     <a class="dropdown-item d-flex justify-content-between" href="{{ route('logout') }}"
@@ -174,7 +188,10 @@
             
         </div>
         <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <script src="{{ asset('js/caleandar.js') }}"></script>
+        <script src="{{ asset('js/demo.js') }}"></script>
         @endauth
     </div>
+    
 </body>
 </html>
