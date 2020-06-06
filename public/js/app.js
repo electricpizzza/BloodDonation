@@ -49604,6 +49604,8 @@ let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" styl
 });
 function validat(form){
   navigator.geolocation;
+
+  
   navigator.geolocation.getCurrentPosition(loc=>{
    
 //------For location----//
@@ -49615,7 +49617,12 @@ function validat(form){
           console.log(city);
           $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
           form.submit();
-      }).catch(err=>console.error(err.code));
+      }).catch(err=>console.log(err.code));
+  },function(error) {
+    if (error.code == error.PERMISSION_DENIED)
+      console.log(error);
+      $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="undefined" name="city">`);
+      form.submit();
   });
   return false;
 }
