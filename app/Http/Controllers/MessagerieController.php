@@ -13,6 +13,11 @@ use Illuminate\Notifications\Notification;
 
 class MessagerieController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 
     public function readMsg(Conversation $conversation)
     {

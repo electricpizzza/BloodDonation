@@ -14,7 +14,7 @@
                     </div>
                     <div class="row p-0 m-0">
                         <div class="col-lg-12 justify-content-center align-items-center p-0">
-                            @if (auth()->user()->caravan==null||$caravan->id!=auth()->user()->caravan->id)
+                            @if (auth()->user()==null||auth()->user()->caravan==null||$caravan->id!=auth()->user()->caravan->id)
                             <a href="#" class="modif-prof-bd p-2">Contacter Nous</a>
                             @else
                             <a href="/caravan/{{$caravan->id}}/edit" class="modif-prof-bd p-2">Modifier le Profile</a>

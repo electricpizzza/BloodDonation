@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class CaravanController extends Controller
 {
+  
     public function index(Caravan $caravan)
     {
         $elements = [];
@@ -19,6 +20,8 @@ class CaravanController extends Controller
     }
     public function edit(Caravan $caravan)
     {
+        if (auth()->user()!=$caravan->user) 
+        return redirect('/home');
         return view('caravans.edit',compact('caravan'));
     }
 
@@ -32,7 +35,7 @@ class CaravanController extends Controller
             'endingTime'=>'required',
         ]);
 
-        $user = \App\User::find(1);
+        $user = auth()->user();
         
         $user->caravan()->create(array_merge($caravan,[
             "latestPosition"=>$caravan["currentPosition"]

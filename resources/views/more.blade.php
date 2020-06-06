@@ -36,7 +36,7 @@
 
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <form action="" method="GET">
+                            <form action="/" method="POST">
 
                                 <div class="container assoc-creation mt-3 p-4 mb-3 justify-content-center">
                                     <img src="/img/assos.png" alt="" class="assocpik w-50">

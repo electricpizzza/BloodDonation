@@ -18,13 +18,14 @@
                                     @if ($conversation->user == auth()->user())
                                         {{\App\Bloodrequest::find($conversation->blood_request_id)->user->name}}
                                     @else                                
-                                        {{$conversation->user->name}}
+                                        {{$conversation->user->name}} 
                                     @endif
-                                    @foreach (auth()->user()->unreadNotifications->where('type','App\Notifications\MessageNotif') as $item)
+                                    
+                                    {{-- @foreach (auth()->user()->unreadNotifications->where('type','App\Notifications\MessageNotif') as $item)
                                     @if ($item['data']['id']==$conversation->messages->last()->id)
                                         <span class="badge badge-danger" id="new{{$conversation->id}}">New</span>
                                     @endif
-                                    @endforeach
+                                    @endforeach --}}
                                     </h5>
                                     <h6 class="ville-chat-bd is-connected">
                                         <i class="fas fa-record-vinyl"></i> Maintenant à {{$conversation->user->city}}
@@ -32,12 +33,12 @@
                                 </div>
                             </a>
                         @endforeach
-                    {{-- <div class="row single-user-bd p-2 my-2">
+                     <div class="row single-user-bd p-2 my-2">
                         <div class="col-lg-4 text-right">
                             <img src="/img/img.png" class="rounded-circle img-fluid w-75" alt="">
                         </div>
                         <div class="col-lg-8">
-                            <h5 class="username-chat-bd">Ahmed Safa</h5>
+                            <h5 class="username-chat-bd">Ahmed Safa  <span class="badge badge-danger" id="new">New</span></h5>
                             <h6 class="ville-chat-bd is-deconnected">
                                 <i class="fas fa-record-vinyl"></i> Indisponible</h6>
                         </div>
@@ -62,7 +63,7 @@
                             <h6 class="ville-chat-bd is-deconnected">
                                 <i class="fas fa-record-vinyl"></i> Indisponible</h6>
                         </div>
-                    </div> --}}
+                    </div> 
                     </div>
                 </div>
             </div>
@@ -72,8 +73,8 @@
                         <div class="col-lg-12 pt-3 chat-with-bd">
                            @if ($conversation_curent!=null)
                            @if ($conversation_curent->user == auth()->user())
-                           <h1 class="text-center chat-with-name-bd"> <span class="chat-ca-bd"> {{\App\Bloodrequest::find($conversation_curent->blood_request_id)->user->name}} -
-                           </span> Sur Ma Demande </h1>
+                           <h1 class="text-center chat-with-name-bd"> <span class="chat-ca-bd"> Conversation Avec -
+                                {{\App\Bloodrequest::find($conversation_curent->blood_request_id)->user->name}}
                            @else
                            <h1 class="text-center chat-with-name-bd"> <span class="chat-ca-bd"> Conversation Avec -
                            </span> {{$conversation_curent->user->name ?? ''}}</h1>

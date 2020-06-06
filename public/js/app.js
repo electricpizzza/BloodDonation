@@ -49571,12 +49571,13 @@ let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" styl
 //------For location----//
     const long=loc.coords.longitude;
     const lati=loc.coords.latitude;
-    const apiKey = `0244cef8afc840`
+    const apiKey = `0244cef8afc840`;
       fetch(`https://eu1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${lati}&lon=${long}&accept-language=fr&format=json`).then(resp=>resp.json()).then(data=>{
           city = data.address.city;
           $("#city").val(city);
           $("#address").val(data.display_name);
 
+      console.log(city);
          
       }).catch(err=>console.error(err.code));
   });
@@ -49602,8 +49603,21 @@ let toastNotif = `<div class="toast" data-autohide="true" data-delay="5000" styl
   
 });
 function validat(form){
-  $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
-  return true;
+  navigator.geolocation;
+  navigator.geolocation.getCurrentPosition(loc=>{
+   
+//------For location----//
+    const long=loc.coords.longitude;
+    const lati=loc.coords.latitude;    
+    const apiKey = `0244cef8afc840`;
+      fetch(`https://eu1.locationiq.com/v1/reverse.php?key=${apiKey}&lat=${lati}&lon=${long}&accept-language=fr&format=json`).then(resp=>resp.json()).then(data=>{
+          city = data.address.city;
+          console.log(city);
+          $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
+          form.submit();
+      }).catch(err=>console.error(err.code));
+  });
+  return false;
 }
 
 

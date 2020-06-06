@@ -94,6 +94,9 @@ Route::post('/message/{conversation}', 'MessagerieController@send');
 Route::get('/caravan/{caravan}', 'CaravanController@index')->name('caravan.show');
 Route::get('/caravan/{caravan}/edit', 'CaravanController@edit');
 
+Route::get('/association/{association}', 'AssociationController@index')->name('association.show');
+Route::get('/association/{association}/edit', 'AssociationController@edit');
+
 Route::get('/more', function () {
     $user = auth()->user();
     if($user->caravan!=null)

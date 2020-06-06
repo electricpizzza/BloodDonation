@@ -11637,3 +11637,140 @@ a.text-dark:focus {
         bottom: 30%;
 
     }
+    .assoc_profile {
+      box-shadow: 0px 0px 15px rgba(43, 53, 192, 0.3);
+      border-radius: 15px;
+  }
+
+  .photo_assoc {
+      position: relative;
+      display: inline-flex;
+      bottom: 130px;
+      border: 5px solid white;
+      height: 250px;
+      width: 250px;
+  }
+
+  .cover-assoc {
+      height: 313px;
+  }
+
+  .assoc_name {
+      position: relative;
+      font-weight: bold;
+      bottom: 130px;
+      color: rgb(81, 56, 219);
+  }
+
+  .assoc_desc {
+      position: relative;
+      bottom: 130px;
+      text-align: center;
+      left: 15%;
+      width: 70%;
+      color: rgba(0, 0, 0, 0.5);
+  }
+
+  .edit_assoc {
+      color: rgb(46, 59, 236);
+      position: relative;
+      font-size: 35px;
+      background: rgb(233, 233, 233);
+      left: 50%;
+      bottom: 60px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      height: 64px;
+      width: 64px;
+  }
+
+  .edit_assoc:hover {
+      box-shadow: 0px 0px 10px rgb(81, 56, 219, 0.5);
+  }
+
+  .project-tab {
+      padding: 10%;
+      margin-top: -8%;
+  }
+
+  .project-tab #tabs {
+      background: rgb(46, 59, 236);
+      color: #eee;
+  }
+
+  .project-tab #tabs h6.section-title {
+      color: #eee;
+  }
+
+  .project-tab #tabs .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+      color: rgb(46, 59, 236);
+      background-color: transparent;
+      border-color: transparent transparent #f3f3f3;
+      border-bottom: 3px solid !important;
+      font-size: 16px;
+      font-weight: bold;
+  }
+
+  .project-tab .nav-link {
+      border: 1px solid transparent;
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+      color: rgb(46, 59, 236);
+      font-size: 16px;
+      font-weight: 600;
+  }
+
+  .project-tab .nav-link:hover {
+      border: none;
+  }
+
+  .project-tab thead {
+      background: #f3f3f3;
+      color: #333;
+  }
+
+  .project-tab a {
+      text-decoration: none;
+      color: rgb(46, 59, 236);
+      font-weight: 600;
+  }
+
+  .body_assoc {
+      position: relative;
+      bottom: 100px;
+      color: #242424;
+  }
+
+  .nav-switch {
+      color: rgb(145, 145, 145);
+      transition: 0.5s;
+  }
+
+  .nav-switch:hover {
+      color: rgb(46, 59, 236);
+      background-color: rgb(224, 224, 224);
+      transition: 0.5s;
+  }
+
+  .director-img {
+      width: 25px;
+      height: 25px;
+  }
+
+  .table-info-assoc {
+      color: rgb(71, 71, 71);
+  }
+
+  .big-txt-assoc {
+      font-weight: bolder !important;
+      font-size: 20px;
+      color: rgb(144, 64, 248);
+  }
+
+  .director-img {
+      width: 40px;
+      height: 40px;
+
+  }
