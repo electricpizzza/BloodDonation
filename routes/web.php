@@ -106,3 +106,7 @@ Route::get('/more', function () {
     return view('more',compact('user'));
 
 })->name('more.show');
+
+Route::get('/we-are', function () {
+    return view('weare');
+});

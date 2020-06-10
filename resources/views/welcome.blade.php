@@ -96,13 +96,28 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content col-12" id="main-title">
                 <div class="title m-b-md">
                     Drop of Life <img src="https://img.icons8.com/ios-filled/90/ff6b95/drop-of-blood.png"/>
                 </div>
             </div>
+            <script>
+                setInterval(() => {
+                    $("#main-title").fadeOut(2000);
+                    
+                    $(".full-height").animate({
+                        height:'10vh'
+                    },2000);
+                }, 2000);
+            </script>
         </div>
-        <div class="col-12 p-5">
+        <div class="d-flex justify-content-around col-12 m-5">
+            <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
+            <a href="#" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
+            <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Evenements</a>
+        </div>
+        <div class="container-fluid row">
+        <div class="col-md-8">
 
             @foreach ($content as $item)
                 @switch($item['type'])
@@ -209,6 +224,110 @@
             @endforeach
 
         </div>
+        <div class="col-md-4">
+            <div class="container-fluid profile-section p-3">
+                <div class="form-group">
+                    <label for="">Ville</label>
+                    <select class="custom-select" name="city" id="city">
+                        <option selected>Choisir une ville</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="">Type de Sang</label>
+                  <select class="custom-select" name="bloodType" id="bloodtype">
+                    <option value="NaN" disabled selected>Choisir Votre Type de Son</option>
+                    <option value="A+">A positive (A+)</option>
+                    <option value="A-">A negative (A-)</option>
+                    <option value="B+">B positive (B+)</option>
+                    <option value="B-">B negative (B-)</option>
+                    <option value="O+">O positive (O+)</option>
+                    <option value="O-">O negative (O-)</option>
+                    <option value="AB+">AB positive (AB+)</option>
+                    <option value="AB-">AB negative (AB-)</option>
+                  </select>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!-- Footer -->
+<footer class="page-footer font-small teal pt-4 bg-light-gray">
+    <hr>
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-8 mt-md-0 row">
+            <div class="d-flex justify-content-around col-12 m-3">
+                <a href="#" class="" role="button" aria-pressed="true">Aide</a>
+                <a href="#" class="" role="button" aria-pressed="true">Règlement</a>
+                <a href="/we-are" class="" role="button" aria-pressed="true">Qui sommes-nous ?</a>
+            </div>
+          <!-- Content -->
+        <div class="col-md-12 ml-2">
+          <h5 class="text-uppercase font-weight-bold mt-3">Drop Of Life</h5>
+          <p class="p-2">Drop Of Life est une plateforme où vous pouvez publier des demandes de don du sang et partager vos publication les reseaux sociaux. </p>
+        </div>
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 py-5">
+            <h5 class="p-4">Suivez nous sur :</h5>
+            <div class="mb-5 flex-center">
+    
+              <!-- Facebook -->
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!-- Twitter -->
+              <a class="tw-ic">
+                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!-- Google +-->
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+            
+            </div>
+            <div class="mb-5 flex-center">
+             <!--Linkedin -->
+             <a class="li-ic">
+                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Instagram-->
+              <a class="ins-ic">
+                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Pinterest-->
+              <a class="pin-ic">
+                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
+              </div>
+    
+          </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Text -->
+    <hr>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
+      <a href="#"> DropOfLife</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
     </body>
     <script>
     const deadlines = document.querySelectorAll(".deadline");

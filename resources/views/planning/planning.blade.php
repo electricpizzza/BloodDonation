@@ -62,7 +62,7 @@
                 @csrf
                 <div class="form-group row">
                     <div class="col">
-                        <select id="bloodType" type="bloodType" class="form-control @error('bloodType') is-invalid @enderror" name="bloodType" value="{{ old('bloodType') }}" required autocomplete="bloodType">
+                        <select id="bloodType" type="bloodType" class="custom-select @error('bloodType') is-invalid @enderror" name="bloodType" value="{{ old('bloodType') }}" required autocomplete="bloodType">
                             <option value="NaN" disabled selected>Choisir Votre Type de Son</option>
                             <option value="A+">A positive (A+)</option>
                             <option value="A-">A negative (A-)</option>
@@ -112,7 +112,7 @@
 
                 <div class="form-group row">
                     <div class="col">
-                        <select id="timePeriod" type="timePeriod" class="form-control @error('timePeriod') is-invalid @enderror" name="timePeriod" value="{{ old('timePeriod') }}" required autocomplete="timePeriod">
+                        <select id="timePeriod" type="timePeriod" class="custom-select @error('timePeriod') is-invalid @enderror" name="timePeriod" value="{{ old('timePeriod') }}" required autocomplete="timePeriod">
                             <option value="NaN" disabled selected>Choisir La Periode Entre Vos Dons</option>
                             <option value="3">3 Mois</option>
                             <option value="4">4 Mois</option>
