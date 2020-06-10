@@ -3611,7 +3611,7 @@ input[type=button].btn-block {
 }
 
 .dropdown-divider {
-  height: 0;
+  height: 1;
   margin: 0.5rem 0;
   overflow: hidden;
   border-top: 1px solid #e9ecef;
@@ -11774,3 +11774,10 @@ a.text-dark:focus {
       height: 40px;
 
   }
+  .badge-notify{
+    background:red;
+    position:relative;
+    width: 20px;
+    top: -7px;
+    left: -10px;
+   }

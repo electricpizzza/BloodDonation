@@ -111,7 +111,7 @@
                 }, 2000);
             </script>
         </div>
-        <div class="d-flex justify-content-around col-12 m-5">
+        <div class="d-flex justify-content-around col-12 ml-5 mr-5 mb-5">
             <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
             <a href="#" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
             <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Evenements</a>
@@ -325,9 +325,10 @@
       <a href="#"> DropOfLife</a>
     </div>
     <!-- Copyright -->
-  
-  </footer>
+</footer>
   <!-- Footer -->
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+
     </body>
     <script>
     const deadlines = document.querySelectorAll(".deadline");

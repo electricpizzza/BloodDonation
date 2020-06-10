@@ -52,7 +52,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="@auth{{ url('/home') }}@else{{ url('/') }}@endauth">
                     <i class="fas fa-tint text-danger"> D</i>{{ 'rop of Life' }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -80,14 +80,14 @@
                         @else
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link d-flex justify-content-end">
-                                    <img src="https://img.icons8.com/ios-filled/24/636363/home.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/26/b8d2fe/home.png"/>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="#" id="notificationDropdown" class="nav-link d-flex justify-content-end" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="https://img.icons8.com/ios-filled/24/636363/appointment-reminders.png"/>
+                                    <img src="https://img.icons8.com/ios-filled/26/b8d2fe/appointment-reminders.png"/>
                                     @if (auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()!=0)
-                                    <span class="badge badge-danger badge-pill m-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()}}</span>
+                                    <span class="badge badge-danger badge-pill badge-notify mb-1 mt-1 p-1" id="notifCount">{{auth()->user()->unreadNotifications->where('type','App\Notifications\InNotif')->count()}}</span>
                                     @endif
                                 </a>
                                 <!------Notifications------>
@@ -106,8 +106,8 @@
                                                 <span class="notif-date d-block">{{$notification->created_at}}</span>
                                             </div>
                                             <div class="d-inline float-right notif-info w-75 pr-1 pt-1">
-                                                <strong class="notif-username">{{$notification['data']['sender_name']}}</strong>
-                                                <span class="notif-info text-dark"> a publier un demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
+                                                <strong class="notif-username">{{$notification['data']['sender_name']}} </strong>
+                                                <span class="notif-info text-dark mr-2"> a publier <br> une demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
                                                 </span>
                                             </div>
                                         </a> 
@@ -120,8 +120,8 @@
                                             <span class="notif-date d-block">{{$notification->created_at}}</span>
                                         </div>
                                         <div class="d-inline float-right notif-info w-75 pr-1 pt-1">
-                                            <strong class="notif-username">{{$notification['data']['sender_name']}}</strong>
-                                            <span class="notif-info text-dark"> a publier un demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
+                                            <strong class="notif-username">{{$notification['data']['sender_name']}} </strong>
+                                            <span class="notif-info text-dark mr-2"> a publier <br> une demand de sang type : <strong>{{$notification['data']['bloodType']}}</strong>
                                                 <span class="badge badge-danger">New</span>
                                             </span>
                                         </div>
@@ -132,21 +132,21 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item d-flex justify-content-between" href="/planning">
-                                        {{ __('Planning') }}<img src="https://img.icons8.com/material-sharp/24/636363/task-planning.png"/>
+                                        {{ __('Planning') }}<img src="https://img.icons8.com/officel/24/b8d2fe/planner.png"/>
                                     </a>
                                     <a class="dropdown-item d-flex justify-content-between" href="/setting">
-                                        {{ __('Paramètre') }}<img src="https://img.icons8.com/material-sharp/24/636363/settings.png"/>
+                                        {{ __('Paramètre') }}<img src="https://img.icons8.com/officel/24/b8d2fe/settings.png"/>
                                     </a>
                                     <a class="dropdown-item d-flex justify-content-between" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}<img src="https://img.icons8.com/metro/24/636363/logout-rounded.png"/>
+                                     {{ __('Logout') }}<img src="https://img.icons8.com/officel/24/b8d2fe/logout-rounded.png"/>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -164,6 +164,79 @@
             @yield('content')
         </main>
            @auth
+           <footer class="page-footer font-small teal pt-4 bg-light-gray">
+            <hr>
+            <!-- Footer Text -->
+            <div class="container-fluid text-center text-md-left">
+          
+              <!-- Grid row -->
+              <div class="row">
+          
+                <!-- Grid column -->
+                <div class="col-md-8 mt-md-0 row">
+                    <div class="d-flex justify-content-around col-12 m-3">
+                        <a href="#" class="" role="button" aria-pressed="true">Aide</a>
+                        <a href="#" class="" role="button" aria-pressed="true">Règlement</a>
+                        <a href="/we-are" class="" role="button" aria-pressed="true">Qui sommes-nous ?</a>
+                    </div>
+                  <!-- Content -->
+                <div class="col-md-12 ml-2">
+                  <h5 class="text-uppercase font-weight-bold mt-3">Drop Of Life</h5>
+                  <p class="p-2">Drop Of Life est une plateforme où vous pouvez publier des demandes de don du sang et partager vos publication les reseaux sociaux. </p>
+                </div>
+                </div>
+                <!-- Grid column -->
+          
+                <hr class="clearfix w-100 d-md-none pb-3">
+          
+                <!-- Grid column -->
+                <div class="col-md-4 py-5">
+                    <h5 class="p-4">Suivez nous sur :</h5>
+                    <div class="mb-5 flex-center">
+            
+                      <!-- Facebook -->
+                      <a class="fb-ic">
+                        <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                      </a>
+                      <!-- Twitter -->
+                      <a class="tw-ic">
+                        <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                      </a>
+                      <!-- Google +-->
+                      <a class="gplus-ic">
+                        <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                      </a>
+                    
+                    </div>
+                    <div class="mb-5 flex-center">
+                     <!--Linkedin -->
+                     <a class="li-ic">
+                        <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                      </a>
+                      <!--Instagram-->
+                      <a class="ins-ic">
+                        <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                      </a>
+                      <!--Pinterest-->
+                      <a class="pin-ic">
+                        <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+                      </a>
+                      </div>
+            
+                  </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+          
+            </div>
+            <!-- Footer Text -->
+            <hr>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
+              <a href="#"> DropOfLife</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
         <div class="menu-layout" id="menu-layout">
             <div class="menu-button" id="menu-bd">
                 <i class="fas fa-bars icons-bd icons-bd-main"></i>
