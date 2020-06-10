@@ -41,5 +41,6 @@ const event = {
      date ,
       adresse , 
       startsAt ,
-      startsAt
+      startsAt,
+    time
 }
