@@ -16,10 +16,10 @@
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script src="https://momentjs.com/downloads/moment.js"></script>
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/jquery-3.4.1.js') }}" ></script>
-        <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
-        <script src="{{ asset('js/menu-script.js') }}"></script>
+        <script src="/js/app.js" defer></script>
+        <script src="/js/jquery-3.4.1.js" ></script>
+        <script src="/js/bootstrap-input-spinner.js"></script>
+        <script src="/js/menu-script.js"></script>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
         <!-- Fonts -->
@@ -29,9 +29,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/card.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+        <link href="/css/app.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/card.css">
+        <link rel="stylesheet" href="/css/menu.css">
     
         <!-- Styles -->
         <style>
