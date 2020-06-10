@@ -46,6 +46,9 @@
             margin-bottom: 30px;
         }
 
+a:hover{
+  text-decoration: none;
+}
 .fa {
     padding: 20px;
   font-size: 30px;
