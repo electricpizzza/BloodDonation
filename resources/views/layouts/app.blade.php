@@ -26,10 +26,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker-standalone.css"> 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
     
-    <script src="js/app.js" defer></script>
-    <script src="js/jquery-3.4.1.js" ></script>
-    <script src="js/bootstrap-input-spinner.js"></script>
-    <script src="js/menu-script.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/jquery-3.4.1.js" ></script>
+    <script src="/js/bootstrap-input-spinner.js"></script>
+    <script src="/js/menu-script.js"></script>
 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
@@ -41,10 +41,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/themeCal.css">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/card.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/themeCal.css">
 
 </head>
 <body>
@@ -188,8 +188,8 @@
             
         </div>
         <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <script src="js/caleandar.js"></script>
-        <script src="js/demo.js"></script>
+        <script src="/js/caleandar.js"></script>
+        <script src="/js/demo.js"></script>
         @endauth
     </div>
     
