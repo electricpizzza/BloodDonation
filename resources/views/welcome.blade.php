@@ -114,11 +114,17 @@
         <div class="d-flex justify-content-around col-12 ml-5 mr-5 mb-5">
             <a href="/?demandes" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
             <a href="/?publication" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
-            <a href="/?evenements" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Evenements</a>
+            <a href="/?evenements" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Evenements</a>
         </div>
         <div class="container-fluid row">
         <div class="col-md-8">
 
+            @if ($content->count()==0)
+                <div class="d-flex justify-content-center flex-column">
+                    <h1>Aucune publication est valables pour cette recherche</h1>
+                    <a name="" id="" class="btn btn-outline-danger" href="/" role="button">Accueil</a>
+                </div>
+            @endif
             @foreach ($content as $item)
                 @switch($item['type'])
                     @case('request')
