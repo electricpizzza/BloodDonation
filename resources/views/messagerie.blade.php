@@ -16,7 +16,7 @@
                                 <div class="col-lg-8">
                                     <h5 class="username-chat-bd">
                                     @if ($conversation->user == auth()->user())
-                                        {{\App\Bloodrequest::find($conversation->blood_request_id)->user->name}}
+                                        {{--\App\Bloodrequest::find($conversation->blood_request_id)->user->name--}}
                                     @else                                
                                         {{$conversation->user->name}} 
                                     @endif
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     
-                    <div class="row single-user-bd p-2 my-2">
+                    {{-- <div class="row single-user-bd p-2 my-2">
                         <div class="col-lg-4 text-right">
                             <img src="/img/img.png" class="rounded-circle img-fluid w-75" alt="">
                         </div>
@@ -63,7 +63,7 @@
                             <h6 class="ville-chat-bd is-deconnected">
                                 <i class="fas fa-record-vinyl"></i> Indisponible</h6>
                         </div>
-                    </div> 
+                    </div>  --}}
                     </div>
                 </div>
             </div>
