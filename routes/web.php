@@ -31,7 +31,7 @@ Route::get('/', function (Request $getby) {
                 $requests = BloodRequest::where("bloodtype",$sort["bloodtype"])->latest()->paginate(5);
             }
             if (array_key_exists("city",$sort)) {
-                $requests = BloodRequest::where("city",$sort["city"])->latest()->paginate(5);
+                $requests = BloodRequest::where("city",$sort["city"])->orWhere("city",strtoupper($sort["city"]))->latest()->paginate(5);
             }
         }
          foreach ($requests as $value) {
