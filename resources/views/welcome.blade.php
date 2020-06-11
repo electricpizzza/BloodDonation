@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <script src="https://momentjs.com/downloads/moment.js"></script>
+      <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
         <script src="/js/app.js" defer></script>
         <script src="/js/jquery-3.4.1.js" ></script>
         <script src="/js/bootstrap-input-spinner.js"></script>
@@ -112,9 +112,9 @@
             </script>
         </div>
         <div class="d-flex justify-content-around col-12 ml-5 mr-5 mb-5">
-            <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
-            <a href="#" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
-            <a href="#" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Evenements</a>
+            <a href="/?demandes" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
+            <a href="/?publication" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
+            <a href="/?evenements" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Evenements</a>
         </div>
         <div class="container-fluid row">
         <div class="col-md-8">
@@ -226,29 +226,28 @@
         </div>
         <div class="col-md-4">
             <div class="container-fluid profile-section p-3">
-                <div class="form-group">
-                    <label for="">Ville</label>
-                    <select class="custom-select" name="city" id="city">
-                        <option selected>Choisir une ville</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                  <label for="">Type de Sang</label>
-                  <select class="custom-select" name="bloodType" id="bloodtype">
-                    <option value="NaN" disabled selected>Choisir Votre Type de Son</option>
-                    <option value="A+">A positive (A+)</option>
-                    <option value="A-">A negative (A-)</option>
-                    <option value="B+">B positive (B+)</option>
-                    <option value="B-">B negative (B-)</option>
-                    <option value="O+">O positive (O+)</option>
-                    <option value="O-">O negative (O-)</option>
-                    <option value="AB+">AB positive (AB+)</option>
-                    <option value="AB-">AB negative (AB-)</option>
-                  </select>
-                </div>
+                <form action="/" method="get">
+                    <div class="form-group">
+                        <label for="">Ville</label>
+                        <select class="custom-select" name="city" id="city">
+                            <option value="NaN"  selected disabled>Choisir une ville</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Type de Sang</label>
+                      <select class="custom-select" name="bloodtype" id="bloodtype">
+                        <option value="NaN" disabled selected>Choisir Votre Type de Sang</option>
+                        <option value="A+">A positive (A+)</option>
+                        <option value="A-">A negative (A-)</option>
+                        <option value="B+">B positive (B+)</option>
+                        <option value="B-">B negative (B-)</option>
+                        <option value="O+">O positive (O+)</option>
+                        <option value="O-">O negative (O-)</option>
+                        <option value="AB+">AB positive (AB+)</option>
+                        <option value="AB-">AB negative (AB-)</option>
+                      </select>
+                    </div>
+                </form>
              </div>
         </div>
     </div>
@@ -331,14 +330,45 @@
 
     </body>
     <script>
+    const villes = ["Casablanca","Fes","Sale","Tanger","Marrakech","Meknes","Rabat","Oujda","Kenitra","Agadir","Tetouan","Temara","Safi","Mohammedia","Khouribga","El Jadida","Beni Mellal","Nador","Taza","Khemisset"];
+    villes.forEach(value=>{
+        $("#city").append(`<option value="${value}">${value}</option>`);
+    });
+    $('#city').change(function() {
+        this.form.submit();
+    });
+    $('#bloodtype').change(function() {
+        this.form.submit();
+    });
     const deadlines = document.querySelectorAll(".deadline");
     moment.locale('fr');
     for (let index = 0; index < deadlines.length; index++) {
         const element = deadlines[index];
         let date = $(element).html().replace(" ","T")
-        date = new Date(date);
         $(element).html(moment(date, "YYYYMMDD").fromNow());
     }
 
+
+    if (localStorage.getItem("visited")!=null) {
+        const visited = JSON.parse(localStorage.getItem("visited"));
+        const lastVisit = new Date(visited.lastVisit);
+        const now = new Date();
+        if (now-lastVisit>1000*60*60) {
+            localStorage.removeItem("visited");
+        }
+        $("#main-title").hide();
+        $(".full-height").css('height','10vh');
+    }else
+        localStorage.setItem("visited",JSON.stringify({lastVisit:new Date()}));
+
+
+    let search = this.location.search.split("city=");
+    let selectedVals = search[1].split("&bloodtype=")
+
+    $("#city").val(selectedVals[0]);
+    $("#bloodtype").val(selectedVals[1]?selectedVals[1]:'NaN');
+
+
+    
     </script>
 </html>

@@ -112,7 +112,7 @@
 
                 <div class="form-group row">
                     <div class="col">
-                        <select id="timePeriod" type="timePeriod" class="custom-select @error('timePeriod') is-invalid @enderror" name="timePeriod" value="{{ old('timePeriod') }}" required autocomplete="timePeriod">
+                        <select id="timePeriod" type="timePeriod" class="custom-select form-control @error('timePeriod') is-invalid @enderror" name="timePeriod" value="{{ old('timePeriod') }}" required autocomplete="timePeriod">
                             <option value="NaN" disabled selected>Choisir La Periode Entre Vos Dons</option>
                             <option value="3">3 Mois</option>
                             <option value="4">4 Mois</option>

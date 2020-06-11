@@ -17,10 +17,23 @@ use App\Event;
 use App\Conversation;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
+Route::get('/', function (Request $getby) {
+
     $content =[];
         $i=0;
+        
         $requests = BloodRequest::latest()->paginate(5);
+        $sort = $getby->all();
+        if (array_key_exists("bloodtype",$sort) && array_key_exists("city",$sort)) {
+            $requests = BloodRequest::where("city",$sort["city"])->where("bloodtype",$sort["bloodtype"])->latest()->paginate(5);
+        } else {
+            if (array_key_exists("bloodtype",$sort)) {
+                $requests = BloodRequest::where("bloodtype",$sort["bloodtype"])->latest()->paginate(5);
+            }
+            if (array_key_exists("city",$sort)) {
+                $requests = BloodRequest::where("city",$sort["city"])->latest()->paginate(5);
+            }
+        }
          foreach ($requests as $value) {
              $content[] = array(
                 'type' =>'request',
@@ -44,11 +57,42 @@ Route::get('/', function () {
                 'created_at' => $value->created_at->format('m/d/Y'),
              );
          }
-
+       
         usort($content, function( $b,$a) {
             return $a['created_at'] <=> $b['created_at'];
         });
 
+
+        if (array_key_exists("demandes",$sort)) {
+            $content = [];
+            foreach ($requests as $value) {
+                $content[] = array(
+                   'type' =>'request',
+                   'request' =>$value,
+                   'created_at' => $value->created_at->format('m/d/Y'),
+                );
+            }
+        }
+        if (array_key_exists("publication",$sort)) {
+            $content = [];
+            foreach ($posts as $value) {
+                $content[] = array(
+                   'type' =>'post',
+                   'post' =>$value,
+                   'created_at' => $value->created_at->format('m/d/Y'),
+                );
+            }
+        }
+        if (array_key_exists("evenements",$sort)) {
+            $content = [];
+            foreach ($events as $value) {
+                $content[] = array(
+                   'type' =>'event',
+                   'event' =>$value,
+                   'created_at' => $value->created_at->format('m/d/Y'),
+                );
+            }
+        }
     return view('welcome',compact('content','requests'));
 });
 
