@@ -16,7 +16,7 @@
                                 <div class="col-lg-8">
                                     <h5 class="username-chat-bd">
                                     @if ($conversation->user == auth()->user())
-                                        {{App\Bloodrequest::find($conversation->blood_request_id)->user->name}}
+                                        {{--App\Bloodrequest::find($conversation->blood_request_id)->user->name--}}
                                     @else                                
                                         {{$conversation->user->name}} 
                                     @endif
@@ -73,7 +73,7 @@
                            @if ($conversation_curent!=null)
                            @if ($conversation_curent->user == auth()->user())
                            <h1 class="text-center chat-with-name-bd"> <span class="chat-ca-bd"> Conversation Avec -
-                                {{App\Bloodrequest::find($conversation_curent->blood_request_id)->user->name}}
+                                {{--App\Bloodrequest::find($conversation_curent->blood_request_id)->user->name--}}
                            @else
                            <h1 class="text-center chat-with-name-bd"> <span class="chat-ca-bd"> Conversation Avec -
                            </span> {{$conversation_curent->user->name ?? ''}}</h1>
