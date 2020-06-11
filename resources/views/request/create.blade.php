@@ -10,7 +10,7 @@
                 @csrf
                 <div class="form-group row">
                     <div class="col">
-                        <select id="bloodType" type="bloodType" class=" form-control custom-select @error('bloodType') is-invalid @enderror" name="bloodType" value="{{ old('bloodType') }}" required autocomplete="bloodType">
+                        <select id="bloodType" type="bloodType" class="custom-select custom-select @error('bloodType') is-invalid @enderror" name="bloodType" value="{{ old('bloodType') }}" required autocomplete="bloodType">
                             <option value="NaN" disabled selected>Choisir Votre Type de Son</option>
                             <option value="A+">A positive (A+)</option>
                             <option value="A-">A negative (A-)</option>

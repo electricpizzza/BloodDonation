@@ -113,14 +113,14 @@
            </ul>
         </div>
         <div class="col-md-4 col-0 mt-md-0 mt-5">
-            <h5 class="title p-2">À Votre Proximité</h5>
-            <div class="card border-danger">
+            <h5 class="title p-2 title-map-bd">À Votre Proximité</h5>
+            <div class="card border-danger map-border-bd">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52903.799325112115!2d-5.018457391753897!3d34.03136498642301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9f8c6226db926f%3A0x3587f35f71c2da72!2sRegional%20Center%20De%20Transfusion%20Sanguine!5e0!3m2!1sen!2sma!4v1585951899761!5m2!1sen!2sma" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
               <div class="card-body">
-                <h4 class="card-title">Center Regional De Transfusion Sanguine</h4>
+                <h4 class="card-title text-center map-text-bd">Center Regional De Transfusion Sanguine</h4>
                 <div class="card-columns d-flex flex-column">
                     <div class="card m-2">
-                        <h3>Caravan le plus proche</h3>
+                        <h3 class="caravan-text-bd-home">Caravan le plus proche</h3>
                     </div>
                     <a href="/caravan/1" class="container-fluid profile-section p-0">
                         <div class="row justify-content-left align-items-left p-0">

@@ -112,9 +112,9 @@
             </script>
         </div>
         <div class="d-flex justify-content-around col-12 ml-5 mr-5 mb-5">
-            <a href="/?demandes" class="btn btn-outline-danger btn-sm" role="button" aria-pressed="true">Demandes</a>
-            <a href="/?publication" class="btn btn-outline-info btn-sm" role="button" aria-pressed="true">Publications</a>
-            <a href="/?evenements" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Evenements</a>
+            <a href="/?demandes" class="btn btn-outline-danger btn-sm demande-btn" role="button" aria-pressed="true">Demandes</a>
+            <a href="/?publication" class="btn btn-outline-info btn-sm publics-btn" role="button" aria-pressed="true">Publications</a>
+            <a href="/?evenements" class="btn btn-outline-primary btn-sm evenments-btn" role="button" aria-pressed="true">Evenements</a>
         </div>
         <div class="container-fluid row">
         <div class="col-md-8">
@@ -258,7 +258,7 @@
         </div>
     </div>
     <!-- Footer -->
-<footer class="page-footer font-small teal pt-4 bg-light-gray">
+<footer class="page-footer font-small teal pt-4 bg-light-gray mt-5">
     <hr>
     <!-- Footer Text -->
     <div class="container-fluid text-center text-md-left">
@@ -275,8 +275,8 @@
             </div>
           <!-- Content -->
         <div class="col-md-12 ml-2">
-          <h5 class="text-uppercase font-weight-bold mt-3">Drop Of Life</h5>
-          <p class="p-2">Drop Of Life est une plateforme où vous pouvez publier des demandes de don du sang et partager vos publication les reseaux sociaux. </p>
+          <h5 class="text-uppercase font-weight-bold ml-2 footer-title-bd">Drop Of Life</h5>
+          <p class="p-2 pb-4 footer-parag">Drop Of Life est une plateforme où vous pouvez publier des demandes de don du sang et partager vos publication les reseaux sociaux. </p>
         </div>
         </div>
         <!-- Grid column -->
@@ -285,11 +285,11 @@
   
         <!-- Grid column -->
         <div class="col-md-4 py-5">
-            <h5 class="p-4">Suivez nous sur :</h5>
+            <h5 class="p-4">Suivez nous sur</h5>
             <div class="mb-5 flex-center">
     
               <!-- Facebook -->
-              <a class="fb-ic">
+              <a class="ml-5 fb-ic">
                 <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
               </a>
               <!-- Twitter -->
@@ -326,8 +326,8 @@
     <!-- Footer Text -->
     <hr>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
-      <a href="#"> DropOfLife</a>
+    <div class="footer-copyright text-center py-3">&copy; 2020 Copyright - 
+      <a href="#">DropOfLife</a>
     </div>
     <!-- Copyright -->
 </footer>

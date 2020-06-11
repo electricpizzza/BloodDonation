@@ -191,7 +191,7 @@
           
                 <!-- Grid column -->
                 <div class="col-md-4 py-5">
-                    <h5 class="p-4">Suivez nous sur :</h5>
+                    <h5 class="p-4">Suivez nous sur</h5>
                     <div class="mb-5 flex-center">
             
                       <!-- Facebook -->
@@ -233,7 +233,7 @@
             <hr>
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">&copy; 2020 Copyright:
-              <a href="#"> DropOfLife</a>
+              <a href="#">DropOfLife</a>
             </div>
             <!-- Copyright -->
           </footer>
