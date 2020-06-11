@@ -49616,6 +49616,8 @@ function validat(form){
           city = data.address.city;
           console.log(city);
           $(form).append(` <input style="display:none" id="locaton" type="text" class="form-control" value="${city}" name="city">`);
+          console.log($(form).html());
+          
           //form.submit();
       }).catch(err=>console.log(err.code));
   },function(error) {
