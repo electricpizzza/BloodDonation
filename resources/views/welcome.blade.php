@@ -119,7 +119,7 @@
         <div class="container-fluid row">
         <div class="col-md-8">
 
-            @if ($content->count()==0)
+            @if (count($content)==0)
                 <div class="d-flex justify-content-center flex-column">
                     <h1>Aucune publication est valables pour cette recherche</h1>
                     <a name="" id="" class="btn btn-outline-danger" href="/" role="button">Accueil</a>
