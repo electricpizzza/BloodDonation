@@ -25,10 +25,10 @@ Route::get('/', function (Request $getby) {
         $requests = BloodRequest::latest()->paginate(5);
         $sort = $getby->all();
         if (array_key_exists("bloodtype",$sort) && array_key_exists("city",$sort)) {
-            $requests = BloodRequest::where("city",$sort["city"])->where("bloodtype",$sort["bloodtype"])->latest()->paginate(5);
+            $requests = BloodRequest::where("city",$sort["city"])->where("bloodType",$sort["bloodtype"])->latest()->paginate(5);
         } else {
             if (array_key_exists("bloodtype",$sort)) {
-                $requests = BloodRequest::where("bloodtype",$sort["bloodtype"])->latest()->paginate(5);
+                $requests = BloodRequest::where("bloodType",$sort["bloodtype"])->latest()->paginate(5);
             }
             if (array_key_exists("city",$sort)) {
                 $requests = BloodRequest::where("city",$sort["city"])->orWhere("city",strtoupper($sort["city"]))->latest()->paginate(5);
