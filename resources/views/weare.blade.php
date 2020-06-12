@@ -160,7 +160,7 @@ a:hover{
                     </p> 
                    </div>
                     <hr style="width: 30%" class="mt-5 mb-5">
-                    <h1 class="we-title team">Team : </h1>
+                    <h1 class="we-title team mb-3">Team : </h1>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
