@@ -153,7 +153,7 @@ a:hover{
                                 <div class="we-cards">
                                     <div class="container-fluid row">
                                       <div class="col-md-4 pl-5 p-3">
-                                        <img class="mt-4 rounded-circle we-photo" src="/img/seghir.png"/>
+                                        <img class="mt-4 rounded-circle we-photo" width='159px' src="/img/seghir.png"/>
                                       </div>
                                         <div class="card-body col-md-8">
                                             <h4 class="we-names">Zakaria Seghir</h4>  
