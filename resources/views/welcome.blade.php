@@ -85,7 +85,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Accueil</a>
                     @else
                         <a href="{{ route('login') }}">Conexion</a>
 
@@ -111,7 +111,7 @@
                 }, 2000);
             </script>
         </div>
-        <div class="d-flex justify-content-around col-12 ml-5 mr-5 mb-5">
+        <div class="d-flex justify-content-around col-12 ml-md-5 mr-md-5 mb-md-5">
             <a href="/?demandes" class="btn btn-outline-danger btn-sm demande-btn" role="button" aria-pressed="true">Demandes</a>
             <a href="/?publication" class="btn btn-outline-info btn-sm publics-btn" role="button" aria-pressed="true">Publications</a>
             <a href="/?evenements" class="btn btn-outline-primary btn-sm evenments-btn" role="button" aria-pressed="true">Evenements</a>

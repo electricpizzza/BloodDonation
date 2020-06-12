@@ -43,7 +43,7 @@
         }
     
         .title {
-            font-size: 100px;
+            font-size: 50px;
             color:#ff6b95;
         }
     
@@ -109,12 +109,47 @@ a:hover{
     min-height: 138px
 
 }
-
+.we-title{
+    border-radius: 30px !important;
+    color: rgb(38, 70, 129) !important;
+    background-color: rgb(229, 238, 255) !important;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-weight: bold;
+    position: relative;
+    left:1%;
+  }
+  .we-desc{
+    border-radius: 30px;
+    background-color: rgb(255, 234, 239);
+    color:black;
+    padding:20px;
+  }
+  .we-cards{
+    border-radius: 30px !important;
+    border:none!important;
+    background-color: rgb(255, 255, 255) !important;
+    background-image: url(../img/background.png);
+    box-shadow: 0px 0px 30px rgba(0, 0, 255, 0.089);
+    min-height: 360px;
+  }
+  .we-names{
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(55, 0, 255);
+  }
+  .we-photo{
+    width: 150px;
+    height: 150px;
+  }
+.team{
+  width: 19%;
+}
 
     </style>
                 <div class="content col-12" id="main-title">
                     <a href="/" class="title">
-                        Drop of Life <img src="https://img.icons8.com/ios-filled/90/ff6b95/drop-of-blood.png"/>
+                        Drop of Life <img src="https://img.icons8.com/ios-filled/40/ff6b95/drop-of-blood.png"/>
                     </a>
                 </div>
                 <div class="container-fluid">
@@ -125,6 +160,7 @@ a:hover{
                     </p> 
                    </div>
                     <hr style="width: 30%" class="mt-5 mb-5">
+                    <h1 class="we-title team">Team : </h1>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
