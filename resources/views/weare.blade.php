@@ -156,7 +156,7 @@ a:hover{
                    <div class="container-fluid row">
                     <h1 class="we-title mt-3">Qui sommes-nous ?</h1>
                     <p class="m-2 d-block we-desc" style="text-indent: 50px;">
-                        Nous somme deux jeunes diplomé de L'Office de la formation professionnelle et de Travail (OFPPT), On a realiser cette platforme comme notre projet de fin de formation sous l'encadrage de Mlle Asmae Youalla formatrice a l'Institut Spécialisé de Technologie Appliquée Hay Al Adarissa Fès.
+                        Nous somme deux jeunes diplomé de L'Office de la formation professionnelle et de Travail (OFPPT), On a realiser cette platforme comme notre projet de fin de formation sous l'encadrage de Mme Asmae Youalla formatrice a l'Institut Spécialisé de Technologie Appliquée Hay Al Adarissa Fès.
                     </p> 
                    </div>
                     <hr style="width: 30%" class="mt-5 mb-5">
