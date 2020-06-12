@@ -336,7 +336,7 @@
 
     </body>
     <script>
-    const villes = ["Casablanca","Fés","Salé","Tanger","Marrakech","Méknes","Rabat","Oujda","Kénitra","Agadir","Tétouan","Témara","Safi","Mohammédia","Khouribga","El Jadida","Béni Méllal","Nador","Taza","Khémisset"];
+    const villes = ["Casablanca","Fés","Salé","Tanger","Marrakech","Méknes","Rabat","Oujda","Kénitra","Agadir","Tétouan","Témara","Safi","Mohammédia","Khouribga","El Jadida","Béni Méllal","Nador","Taza","Khémisset"]; 
     villes.forEach(value=>{
         $("#city").append(`<option value="${value}">${value}</option>`);
     });
