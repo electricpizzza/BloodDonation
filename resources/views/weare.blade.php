@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="../css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -118,8 +119,8 @@ a:hover{
                 </div>
                 <div class="container-fluid">
                    <div class="container-fluid row">
-                    <h1 class=" bg-info col-md-5 text-center p-2 text-light rounded">Qui sommes-nous ?</h1>
-                    <p class="m-2" style="text-indent: 50px;">
+                    <h1 class="we-title mt-3">Qui sommes-nous ?</h1>
+                    <p class="m-2 d-block we-desc" style="text-indent: 50px;">
                         Nous somme deux jeunes diplomé de L'Office de la formation professionnelle et de Travail (OFPPT), On a realiser cette platforme comme notre projet de fin de formation sous l'encadrage de Mlle Asmae Youalla formatrice a l'Institut Spécialisé de Technologie Appliquée Hay Al Adarissa Fès.
                     </p> 
                    </div>
@@ -127,11 +128,13 @@ a:hover{
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="card text-left m-1 border-danger">
+                                <div class="we-cards">
                                     <div class="container-fluid row">
-                                        <img class="mt-3 rounded-circle col-md-4" src="/img/dinar.jpg" width="150px" height="150px" alt=""/>
+                                      <div class="col-md-4 pl-5 p-3">
+                                        <img class="mt-4 rounded-circle we-photo" src="/img/dinar.jpg" />
+                                      </div>
                                         <div class="card-body col-md-8">
-                                            <h4 class="card-title m-2 text-bold">Zakariae Dinar</h4>  
+                                            <h4 class="we-names">Zakariae Dinar</h4>  
                                             <p class="card-text text-justify ">Est un développeur web diplômé de L'Office de la formation professionnelle et de Travail (OFPPT), passioné par la programation et  les nouvelles technologies. <br>
                                             <strong>Outils: Php(LARAVEL), JavaScript, ReactJs, ReactNative, Python </strong>
                                             </p>
@@ -147,14 +150,16 @@ a:hover{
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card text-left m-1 border-danger">
+                                <div class="we-cards">
                                     <div class="container-fluid row">
-                                        <img class="mt-3 rounded-circle col-md-4" src="/img/seghir.png" width="150px" height="150px" alt=""/>
+                                      <div class="col-md-4 pl-5 p-3">
+                                        <img class="mt-4 rounded-circle we-photo" src="/img/seghir.png"/>
+                                      </div>
                                         <div class="card-body col-md-8">
-                                            <h4 class="card-title m-2 text-bold">Zakaria Seghir</h4>  
-                                            <p class="card-text text-justify "> Est un développeur web diplômé de L'Office de la formation professionnelle et de Travail (OFPPT),Intéressé par le gaming et le designe graphique . <br>
-                                                <strong>Outils : Php ,Javascript, Css, Bootstrap ... </strong>
-                                                </p>
+                                            <h4 class="we-names">Zakaria Seghir</h4>  
+                                            <p class="card-text text-justify"> Est un développeur web diplômé de L'Office de la formation professionnelle et de Travail (OFPPT),Intéressé par le gaming et le designe graphique . <br>
+                                                
+                                                <strong>Outils : Php ,Javascript, Css, Bootstrap ... </strong></p>
                                         </div>
                                     </div>
                                         <div class="card-body d-flex justify-content-around">

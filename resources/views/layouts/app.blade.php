@@ -53,7 +53,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="@auth{{ url('/home') }}@else{{ url('/') }}@endauth">
-                    <i class="fas fa-tint text-danger"> D</i>{{ 'rop of Life' }}
+                    <b style="color:#7f6de2"><i class="fas fa-tint" style='color:#ec4e71'> </i>{{ '  Drop of Life' }}</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
